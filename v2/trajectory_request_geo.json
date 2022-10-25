@@ -1,0 +1,26 @@
+{
+    "type": "CPE_NOTIFICATION_REQ",
+    "properties": {
+        "maxAlt":  0,
+        "minAlt":  0,
+        "GUID": "GUID",
+        "SEGMENT": "SEGMENT",
+        "RANGE":  0,
+        "starttime": 0,
+        "endtime": 5
+    },
+    "NOTIFICATION_URL": "https://notification.drf.core….nasa.gov/event/GUID/",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                -112.10159788091084,
+                33.30135043883555
+            ],
+            [
+                -112.06795531676413,
+                33.32430221695647
+            ]
+        ]
+    }
+}

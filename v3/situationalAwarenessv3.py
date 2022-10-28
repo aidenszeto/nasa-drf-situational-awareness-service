@@ -3,6 +3,7 @@ from pydispatch import dispatcher
 from bson.json_util import dumps, loads
 import json
 import pymongo
+import sys
 
 CONFLICT_SIGNAL = 'trajectory-zone-conflict'
 CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?retryWrites=true&w=majority"
@@ -12,17 +13,27 @@ BELOW IS THE CODE TO DETERMINE IF A CERTAIN TRAJECTORY IS ENTERING A KEEPOUT ZON
 
 SAMPLE COMMANDS TO RUN SCRIPT:
 ------------------------------
-
-python situationalAwareness.py
-FALSE output (no zone matches):
+// Version 1: input trajectory JSON, output conflicts
+python situationalAwarenessv3.py trajectory_request_geo.json
+// FALSE output (no zone matches):
 >>[]
 
-TRUE output (some zone match(es):
+// TRUE output (some zone match(es):
 >><object object at 0x7f9c68d14f00>: Trajectory has a conflict with following zone from 2022-08-30 16:00:32 - 2022-08-30 16:10:32: 
  ==================================== 
- {"type": "CPE_NOTIFICATION_RESP", "geometry": {"type": "Polygon", "coordinates": [[[1, 1], [3, 3], [-112.07487793157966, 33.35969573361516], [-112.1154646018878, 33.37213303894667], [-112.14910880414443, 33.34917391297312], [-112.14216470823824, 33.31378483521286], [-112.10159788091084, 33.30135043883555]]]}, "properties": {"TIME": "2022-08-30 16:05:32", "TYPE": "GEO", "EVENT": "EMSALERT", "GUID": "GUID", "SEGMENT": "SEGMENT", "RANGE": 0, "VECTOR": 0, "ALT": 0, "class": "FLIGHTCOORIDOR"}}
+ {"type": "CPE_NOTIFICATION_RESP", "geometry": {"type": "Polygon", "coordinates": [[[1, 1], [3, 3], [-112.07487793157966, 33.35969
+ 573361516], [-112.1154646018878, 33.37213303894667], [-112.14910880414443, 33.34917391297312], [-112.14216470823824, 33.313784835
+ 21286], [-112.10159788091084, 33.30135043883555]]]}, "properties": {"TIME": "2022-08-30 16:05:32", "TYPE": "GEO", "EVENT": "EMSAL
+ ERT", "GUID": "GUID", "SEGMENT": "SEGMENT", "RANGE": 0, "VECTOR": 0, "ALT": 0, "class": "FLIGHTCOORIDOR"}}
 ['GUID']
 
+// Version 2: no input, output list of all the flyable and non-flyable hexagons
+python situationalAwarenessv3.py
+>>[{'_id': ObjectId('63491476cf751ad7ed637ff1'), 'type': 'example', 'geometry': {'type': 'Polygon', 'coordinates': [[[1, 1], [3, 3
+], [-112.07487793157966, 33.35969573361516], [-112.1154646018878, 33.37213303894667], [-112.14910880414443, 33.34917391297312], [-
+112.14216470823824, 33.31378483521286], [-112.10159788091084, 33.30135043883555]]]}, 'properties': {'ALT': 0, 'EVENT': 'EMSALERT',
+ 'GUID': 'GUID', 'RANGE': 0, 'SEGMENT': 'SEGMENT', 'TIME': '2022-08-30 16:05:32', 'TYPE': 'GEO', 'VECTOR': 0, 'active': 1, 'class':
+  'FLIGHTCOORIDOR', 'static': 0}}, ...
 '''
 
 def getCollection():
@@ -45,9 +56,9 @@ def boolHexagonalLineIntersect(hexagonalCoordinates, p1, p2):
             return True
     return False
 
-def select_all_tasks(policy_sender, db):
+def select_all_tasks(policy_sender, db, trajectory_file):
 
-    f = open('trajectory_request_geo.json', "r")
+    f = open(trajectory_file, "r")
 
     rows2ListofLists = []  
     # reading from file
@@ -103,14 +114,22 @@ def select_all_tasks(policy_sender, db):
     # returning final list of ID(s), if any      
     return (finalIDarray)           
 
+def get_zones(db):
+    print(list(db.phoenix.find()))
+
 def trajectory_service(sender, row, time):
     print(f'{sender}: Trajectory has a conflict with following zone from {time}: \n ==================================== \n {row}')
 
 def mainBuildRegion():
     policy_sender = object()
     dispatcher.connect(trajectory_service, signal=CONFLICT_SIGNAL, sender=dispatcher.Any)
-    conflicts = select_all_tasks(policy_sender, getCollection())
-    print("No conflicts" if len(conflicts) == 0 else conflicts)
+    zones = getCollection()
+    if (len(sys.argv) > 1):
+        conflicts = select_all_tasks(
+            policy_sender, zones, sys.argv[1])
+        print("No conflicts" if len(conflicts) == 0 else conflicts)
+    else:
+        get_zones(zones)
     
 if __name__ == '__main__':
     mainBuildRegion()

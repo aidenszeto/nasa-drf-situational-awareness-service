@@ -27,7 +27,7 @@ python situationalAwarenessv3.py trajectory_request_geo.json
  ERT", "GUID": "GUID", "SEGMENT": "SEGMENT", "RANGE": 0, "VECTOR": 0, "ALT": 0, "class": "FLIGHTCOORIDOR"}}
 ['GUID']
 
-// Version 2: no input, output list of all the flyable and non-flyable hexagons
+// Version 2: no input, output JSON file with list of all the flyable and non-flyable hexagons ("phoenix_zones.json")
 python situationalAwarenessv3.py
 >>[{'_id': ObjectId('63491476cf751ad7ed637ff1'), 'type': 'example', 'geometry': {'type': 'Polygon', 'coordinates': [[[1, 1], [3, 3
 ], [-112.07487793157966, 33.35969573361516], [-112.1154646018878, 33.37213303894667], [-112.14910880414443, 33.34917391297312], [-
@@ -115,7 +115,8 @@ def select_all_tasks(policy_sender, db, trajectory_file):
     return (finalIDarray)           
 
 def get_zones(db):
-    print(list(db.phoenix.find()))
+    with open("phoenix_zones.json", "w") as outfile:
+        outfile.write(dumps(list(db.phoenix.find()), indent=4))
 
 def trajectory_service(sender, row, time):
     print(f'{sender}: Trajectory has a conflict with following zone from {time}: \n ==================================== \n {row}')

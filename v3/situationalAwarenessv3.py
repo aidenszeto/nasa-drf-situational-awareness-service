@@ -39,7 +39,7 @@ python situationalAwarenessv3.py
 def getCollection():
     client = pymongo.MongoClient(
         CONN_STR, tls=True, tlsAllowInvalidCertificates=True)
-    return client.zones
+    return client.notification
 
 def ccw(A, B, C):
     return (C[1]-A[1]) * (B[0]-A[0]) > (B[1]-A[1]) * (C[0]-A[0])
@@ -89,7 +89,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
             rows2ListofLists[i + 1][0], '%Y-%m-%d %H:%M:%S')
         
         # list of inactive zones at current time of request
-        rows1 = loads(dumps(db.phoenix.find()))
+        rows1 = loads(dumps(db.poi.find()))
 
         for row in rows1:
             if not row['properties']['static'] and not row['properties']['active']:
@@ -116,7 +116,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
 
 def get_zones(db):
     with open("phoenix_zones.json", "w") as outfile:
-        outfile.write(dumps(list(db.phoenix.find()), indent=4))
+        outfile.write(dumps(list(db.poi.find()), indent=4))
 
 def trajectory_service(sender, row, time):
     print(f'{sender}: Trajectory has a conflict with following zone from {time}: \n ==================================== \n {row}')

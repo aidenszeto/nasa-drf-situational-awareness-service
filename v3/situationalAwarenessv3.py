@@ -83,10 +83,8 @@ def select_all_tasks(policy_sender, db, trajectory_file):
         point2 = [rows2ListofLists[i+1][1][0], rows2ListofLists[i+1][1][1]]
         
         # storing two consecutive trajectory point times
-        time1 = datetime.strptime(
-            rows2ListofLists[i][0], '%Y-%m-%d %H:%M:%S')
-        time2 = datetime.strptime(
-            rows2ListofLists[i + 1][0], '%Y-%m-%d %H:%M:%S')
+        time1 = datetime.strptime(rows2ListofLists[i][0], '%Y-%m-%d %H:%M:%S')
+        time2 = datetime.strptime(rows2ListofLists[i + 1][0], '%Y-%m-%d %H:%M:%S')
         
         # list of inactive zones at current time of request
         rows1 = loads(dumps(db.poi.find()))
@@ -94,8 +92,8 @@ def select_all_tasks(policy_sender, db, trajectory_file):
         for row in rows1:
             if not row['properties']['static'] and not row['properties']['active']:
                 break
-            time = datetime.strptime(
-                row['properties']['TIME'], '%Y-%m-%d %H:%M:%S')
+            # time = datetime.strptime(row['properties']['TIME'], '%Y-%m-%d %H:%M:%S')
+            time = row['properties']['TIME']
             if (time < time1 or time > time2):
                 continue
 

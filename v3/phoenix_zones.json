@@ -3,7 +3,7 @@
         "_id": {
             "$oid": "63491476cf751ad7ed637ff1"
         },
-        "type": "example",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -45,11 +45,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 0
         }
     },
@@ -95,11 +97,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
-            "TYPE": "CPE_NOTIFICATION",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
+            "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 1
         }
     },
@@ -107,7 +111,7 @@
         "_id": {
             "$oid": "6349bd9d43cdecf333854423"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -145,11 +149,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 1
         }
     },
@@ -157,7 +163,7 @@
         "_id": {
             "$oid": "6349be5043cdecf333854424"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -195,11 +201,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 1
         }
     },
@@ -207,7 +215,7 @@
         "_id": {
             "$oid": "6349bf9e43cdecf333854425"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -245,11 +253,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 1
         }
     },
@@ -257,7 +267,7 @@
         "_id": {
             "$oid": "6349c08243cdecf333854426"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -295,11 +305,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 1
         }
     },
@@ -307,7 +319,7 @@
         "_id": {
             "$oid": "6349dfefa7a081719bbde54e"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -345,11 +357,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 1
         }
     },
@@ -357,7 +371,7 @@
         "_id": {
             "$oid": "6349dff5cfd8d35893aacf93"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -395,11 +409,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 1
         }
     },
@@ -407,7 +423,7 @@
         "_id": {
             "$oid": "6349e01ffae1335d10dfce48"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -445,11 +461,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 1
         }
     },
@@ -457,7 +475,7 @@
         "_id": {
             "$oid": "6349e09ca8690235412fd725"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -495,11 +513,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 1
         }
     },
@@ -507,7 +527,7 @@
         "_id": {
             "$oid": "6349e0b73e6c8bf98e3853d9"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -545,11 +565,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 1
         }
     },
@@ -557,7 +579,7 @@
         "_id": {
             "$oid": "6349e0d0a81b3de54013b129"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -595,11 +617,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 1
         }
     },
@@ -607,7 +631,7 @@
         "_id": {
             "$oid": "6349e15263d635b7bcf3844f"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -645,11 +669,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 0
         }
     },
@@ -657,7 +683,7 @@
         "_id": {
             "$oid": "6349e172aeacc136dc0b6044"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -695,11 +721,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 0
         }
     },
@@ -707,7 +735,7 @@
         "_id": {
             "$oid": "6349e19bdc03c955d294438c"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -745,11 +773,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 0
         }
     },
@@ -757,7 +787,7 @@
         "_id": {
             "$oid": "6349e1af0393c22ff321c907"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -795,11 +825,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 1,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 0
         }
     },
@@ -807,7 +839,7 @@
         "_id": {
             "$oid": "6349e1ce1ba6ad8f0a381c4d"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -845,11 +877,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 0,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 0
         }
     },
@@ -857,7 +891,7 @@
         "_id": {
             "$oid": "63504a793f60b6ac5ab71e57"
         },
-        "type": "CPE_NOTIFICATION_RESP",
+        "type": "Feature",
         "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -895,11 +929,13 @@
             "GUID": "GUID",
             "RANGE": 0,
             "SEGMENT": "SEGMENT",
-            "TIME": "2022-08-30 16:05:32",
+            "TIME": {
+                "$date": "2022-08-30T16:05:32Z"
+            },
             "TYPE": "GEO",
             "VECTOR": 0,
             "active": 0,
-            "class": "FLIGHTCOORIDOR",
+            "class": "FLIGHTCORRIDOR",
             "static": 0
         }
     }

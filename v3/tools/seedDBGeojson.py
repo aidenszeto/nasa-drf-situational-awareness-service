@@ -22,6 +22,7 @@ def createConnection():
 
 
 def generateHexagon(lat, lon, radius):
+    print((lat, lon))
     lat = float(lat)
     lon = float(lon)
     coordinates = []
@@ -71,11 +72,11 @@ def main(file, static):
             "type": "Polygon",
             "coordinates": [smallestCircumscribingHexagon(zones[i])]
         }
-        print({
-            "type": "Feature",
-            "geometry": geometry,
-            "properties": properties
-        })
+        # print({
+        #     "type": "Feature",
+        #     "geometry": geometry,
+        #     "properties": properties
+        # })
         # arizona.insert_one({
         #     "type": "Feature",
         #     "geometry": geometry,

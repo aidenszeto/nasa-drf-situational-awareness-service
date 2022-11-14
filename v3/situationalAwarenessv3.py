@@ -60,7 +60,6 @@ def select_all_tasks(policy_sender, db, trajectory_file):
 
     f = open(trajectory_file, "r")
 
-    rows2ListofLists = []  
     # reading from file
     data = json.loads(f.read())
  

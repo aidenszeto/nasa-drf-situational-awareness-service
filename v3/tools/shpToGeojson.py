@@ -16,5 +16,6 @@ def main():
             df.to_file(
                 f"arizona-geojson/{f[len(DIRECTORY) + 1:len(f) - 4]}.geojson", driver="GeoJSON")
 
+
 if __name__ == '__main__':
     main()

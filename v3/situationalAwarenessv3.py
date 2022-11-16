@@ -1,5 +1,5 @@
 from datetime import datetime
-from pydispatch import dispatcher
+# from pydispatch import dispatcher
 from bson.json_util import dumps, loads
 import json
 import pymongo
@@ -91,7 +91,6 @@ def select_all_tasks(policy_sender, db, trajectory_file):
         for row in rows1:
             if not row['properties']['static'] and not row['properties']['active']:
                 break
-            # time = datetime.strptime(row['properties']['TIME'], '%Y-%m-%d %H:%M:%S')
             time = row['properties']['TIME']
             if (time < time1 or time > time2):
                 continue
@@ -103,7 +102,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
             # adding the ID of the keepout zone cylinder to the final array if an appropriate intersection is found
             if (boolVal == True):
                 finalIDarray.append(guid)
-                dispatcher.send(signal=CONFLICT_SIGNAL, sender=policy_sender, row=row, time=f'{time1} - {time2}')
+                # dispatcher.send(signal=CONFLICT_SIGNAL, sender=policy_sender, row=row, time=f'{time1} - {time2}')
                 
             # removing potential duplicates when two line segments fall within the same cylinder
             finalIDarray = list(dict.fromkeys(finalIDarray))
@@ -115,12 +114,12 @@ def get_zones(db):
     with open("phoenix_zones.json", "w") as outfile:
         outfile.write(dumps(list(db.arizona.find()), indent=4))
 
-def trajectory_service(sender, row, time):
-    print(f'{sender}: Trajectory has a conflict with following zone from {time}: \n ==================================== \n {row}')
+# def trajectory_service(sender, row, time):
+#     print(f'{sender}: Trajectory has a conflict with following zone from {time}: \n ==================================== \n {row}')
 
 def mainBuildRegion():
     policy_sender = object()
-    dispatcher.connect(trajectory_service, signal=CONFLICT_SIGNAL, sender=dispatcher.Any)
+    # dispatcher.connect(trajectory_service, signal=CONFLICT_SIGNAL, sender=dispatcher.Any)
     zones = getCollection()
     if (len(sys.argv) > 1):
         conflicts = select_all_tasks(

@@ -5,10 +5,10 @@ import json
 import pymongo
 import sys
 
-CONFLICT_SIGNAL = 'trajectory-zone-conflict'
+CONFLICT_SIGNAL = "trajectory-zone-conflict"
 CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?retryWrites=true&w=majority"
 
-'''
+"""
 BELOW IS THE CODE TO DETERMINE IF A CERTAIN TRAJECTORY IS ENTERING A KEEPOUT ZONE IN REAL-TIME.
 
 SAMPLE COMMANDS TO RUN SCRIPT:
@@ -25,16 +25,16 @@ python situationalAwarenessv3.py trajectory_request_geo.json
  573361516], [-112.1154646018878, 33.37213303894667], [-112.14910880414443, 33.34917391297312], [-112.14216470823824, 33.313784835
  21286], [-112.10159788091084, 33.30135043883555]]]}, "properties": {"TIME": "2022-08-30 16:05:32", "TYPE": "GEO", "EVENT": "EMSAL
  ERT", "GUID": "GUID", "SEGMENT": "SEGMENT", "RANGE": 0, "VECTOR": 0, "ALT": 0, "class": "FLIGHTCOORIDOR"}}
-['GUID']
+["GUID"]
 
 // Version 2: no input, output JSON file with list of all the flyable and non-flyable hexagons ("phoenix_zones.json")
 python situationalAwarenessv3.py
->>[{'_id': ObjectId('63491476cf751ad7ed637ff1'), 'type': 'example', 'geometry': {'type': 'Polygon', 'coordinates': [[[1, 1], [3, 3
+>>[{"_id": ObjectId("63491476cf751ad7ed637ff1"), "type": "example", "geometry": {"type": "Polygon", "coordinates": [[[1, 1], [3, 3
 ], [-112.07487793157966, 33.35969573361516], [-112.1154646018878, 33.37213303894667], [-112.14910880414443, 33.34917391297312], [-
-112.14216470823824, 33.31378483521286], [-112.10159788091084, 33.30135043883555]]]}, 'properties': {'ALT': 0, 'EVENT': 'EMSALERT',
- 'GUID': 'GUID', 'RANGE': 0, 'SEGMENT': 'SEGMENT', 'TIME': '2022-08-30 16:05:32', 'TYPE': 'GEO', 'VECTOR': 0, 'active': 1, 'class':
-  'FLIGHTCOORIDOR', 'static': 0}}, ...
-'''
+112.14216470823824, 33.31378483521286], [-112.10159788091084, 33.30135043883555]]]}, "properties": {"ALT": 0, "EVENT": "EMSALERT",
+ "GUID": "GUID", "RANGE": 0, "SEGMENT": "SEGMENT", "TIME": "2022-08-30 16:05:32", "TYPE": "GEO", "VECTOR": 0, "active": 1, "class":
+  "FLIGHTCOORIDOR", "static": 0}}, ...
+"""
 
 def getCollection():
     client = pymongo.MongoClient(
@@ -65,9 +65,9 @@ def select_all_tasks(policy_sender, db, trajectory_file):
  
     # converting the list of dictionaries from the JSON file to a list of lists
     rows2ListofLists = []
-    for i in range(len(data['tsim_datetime'])):
+    for i in range(len(data["tsim_datetime"])):
         rows2ListofLists.append(
-            [data['tsim_datetime'][i], (data['latitude_deg'][i], data['longitude_deg'][i])])
+            [data["tsim_datetime"][i], (data["latitude_deg"][i], data["longitude_deg"][i])])
 
     f.close()
     
@@ -82,27 +82,29 @@ def select_all_tasks(policy_sender, db, trajectory_file):
         point2 = [rows2ListofLists[i+1][1][0], rows2ListofLists[i+1][1][1]]
         
         # storing two consecutive trajectory point times
-        time1 = datetime.strptime(rows2ListofLists[i][0], '%Y-%m-%d %H:%M:%S')
-        time2 = datetime.strptime(rows2ListofLists[i + 1][0], '%Y-%m-%d %H:%M:%S')
+        time1 = datetime.strptime(rows2ListofLists[i][0], "%Y-%m-%d %H:%M:%S")
+        time2 = datetime.strptime(rows2ListofLists[i + 1][0], "%Y-%m-%d %H:%M:%S")
         
         # list of inactive zones at current time of request
         rows1 = loads(dumps(db.arizona.find()))
 
         for row in rows1:
-            if not row['properties']['static'] and not row['properties']['active']:
+            if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
                 break
-            time = row['properties']['TIME']
-            if (time < time1 or time > time2):
+            
+            start_time = row["properties"]["AVOID_START_TIME"]
+            end_time = row["properties"]["AVOID_END_TIME"]
+            if (end_time < time1 or start_time > time2):
                 continue
 
-            guid = row['properties']['GUID']
-            hexagonalCoordinates = row['geometry']['coordinates'][0]
+            guid = row["properties"]["GUID"]
+            hexagonalCoordinates = row["geometry"]["coordinates"][0]
 
             boolVal = boolHexagonalLineIntersect(hexagonalCoordinates, (point1[0], point1[1]), (point2[0], point2[1]))
             # adding the ID of the keepout zone cylinder to the final array if an appropriate intersection is found
             if (boolVal == True):
                 finalIDarray.append(guid)
-                # dispatcher.send(signal=CONFLICT_SIGNAL, sender=policy_sender, row=row, time=f'{time1} - {time2}')
+                # dispatcher.send(signal=CONFLICT_SIGNAL, sender=policy_sender, row=row, time=f"{time1} - {time2}")
                 
             # removing potential duplicates when two line segments fall within the same cylinder
             finalIDarray = list(dict.fromkeys(finalIDarray))
@@ -115,7 +117,7 @@ def get_zones(db):
         outfile.write(dumps(list(db.arizona.find()), indent=4))
 
 # def trajectory_service(sender, row, time):
-#     print(f'{sender}: Trajectory has a conflict with following zone from {time}: \n ==================================== \n {row}')
+#     print(f"{sender}: Trajectory has a conflict with following zone from {time}: \n ==================================== \n {row}")
 
 def mainBuildRegion():
     policy_sender = object()
@@ -128,7 +130,7 @@ def mainBuildRegion():
     else:
         get_zones(zones)
     
-if __name__ == '__main__':
+if __name__ == "__main__":
     mainBuildRegion()
     
     

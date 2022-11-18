@@ -86,12 +86,12 @@ def select_all_tasks(policy_sender, db, trajectory_file):
         time2 = datetime.strptime(rows2ListofLists[i + 1][0], "%Y-%m-%d %H:%M:%S")
         
         # list of inactive zones at current time of request
-        rows1 = loads(dumps(db.arizona.find()))
+        rows1 = loads(dumps(db.arizona_static.find()))
 
         for row in rows1:
             if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
                 break
-            
+
             start_time = row["properties"]["AVOID_START_TIME"]
             end_time = row["properties"]["AVOID_END_TIME"]
             if (end_time < time1 or start_time > time2):
@@ -114,7 +114,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
 
 def get_zones(db):
     with open("phoenix_zones.json", "w") as outfile:
-        outfile.write(dumps(list(db.arizona.find()), indent=4))
+        outfile.write(dumps(list(db.arizona_static.find()), indent=4))
 
 # def trajectory_service(sender, row, time):
 #     print(f"{sender}: Trajectory has a conflict with following zone from {time}: \n ==================================== \n {row}")

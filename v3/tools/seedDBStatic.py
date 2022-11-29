@@ -2,7 +2,7 @@
 # Second argument is a if the file contains zones that are always active
 # 
 # python3 seedDBStatic.py file a --> zones always active
-# python3 seedDBStatic.py fil --> zones not always active
+# python3 seedDBStatic.py file --> zones not always active
 
 import pymongo
 import sys
@@ -11,7 +11,7 @@ import numpy
 import math
 import matplotlib.path as mplPath
 from datetime import datetime
-from classes.classes import Water, Building, School, Government, Health, Retail, Entertainment, Outdoors, Food, Housing, Service, Tower
+from classes.classes import Water, School, Government, Health, Retail, Entertainment, Outdoors, Food, Housing, Service, Tower
 
 
 CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?retryWrites=true&w=majority"
@@ -72,8 +72,6 @@ def main(file, always_avoid):
         fclass = zones[i]["properties"]["fclass"]
         if fclass in Water:
             fclass = "Flyable.Water"
-        elif fclass in Building:
-            fclass = "Flyable.Building"
         elif fclass in School:
             fclass = "NotFlyable.School"
         elif fclass in Government:

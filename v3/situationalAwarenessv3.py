@@ -16,7 +16,7 @@ SAMPLE COMMANDS TO RUN SCRIPT:
 // Version 1: input trajectory JSON, output conflicts
 python situationalAwarenessv3.py trajectory_request_geo.json
 // FALSE output (no zone matches):
->>[]
+>>No conflicts
 
 // TRUE output (some zone match(es):
 >><object object at 0x7f9c68d14f00>: Trajectory has a conflict with following zone from 2022-08-30 16:00:32 - 2022-08-30 16:10:32: 
@@ -67,35 +67,33 @@ def select_all_tasks(policy_sender, db, trajectory_file):
     rows2ListofLists = []
     for i in range(len(data["tsim_datetime"])):
         rows2ListofLists.append(
-            [data["tsim_datetime"][i], (data["latitude_deg"][i], data["longitude_deg"][i])])
+            [data["tsim_datetime"][i], (data["longitude_deg"][i], data["latitude_deg"][i])])
 
     f.close()
     
     # empty array that will return upon no intersectfstion
     finalIDarray = []
-    
-    # trajectory-line loop
-    for i in range(0, len(rows2ListofLists) - 1):
+    rows1 = loads(dumps(db.arizona_static.find()))
 
-        # storing two consecutive trajectory points
-        point1 = [rows2ListofLists[i][1][0], rows2ListofLists[i][1][1]]
-        point2 = [rows2ListofLists[i+1][1][0], rows2ListofLists[i+1][1][1]]
-        
-        # storing two consecutive trajectory point times
-        time1 = datetime.strptime(rows2ListofLists[i][0], "%Y-%m-%d %H:%M:%S")
-        time2 = datetime.strptime(rows2ListofLists[i + 1][0], "%Y-%m-%d %H:%M:%S")
-        
-        # list of inactive zones at current time of request
-        rows1 = loads(dumps(db.arizona_static.find()))
+    for row in rows1:
+        # if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
+        #     break
 
-        for row in rows1:
-            if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
-                break
+        start_time = row["properties"]["AVOID_START_TIME"]
+        end_time = row["properties"]["AVOID_END_TIME"]
 
-            start_time = row["properties"]["AVOID_START_TIME"]
-            end_time = row["properties"]["AVOID_END_TIME"]
-            if (end_time < time1 or start_time > time2):
-                continue
+        for i in range(0, len(rows2ListofLists) - 1):
+
+            # storing two consecutive trajectory points
+            point1 = [rows2ListofLists[i][1][0], rows2ListofLists[i][1][1]]
+            point2 = [rows2ListofLists[i+1][1][0], rows2ListofLists[i+1][1][1]]
+
+            # storing two consecutive trajectory point times
+            time1 = datetime.strptime(rows2ListofLists[i][0], "%Y-%m-%d %H:%M:%S")
+            time2 = datetime.strptime(rows2ListofLists[i + 1][0], "%Y-%m-%d %H:%M:%S")
+
+            # if (end_time < time1 or start_time > time2):
+            #     continue
 
             guid = row["properties"]["GUID"]
             hexagonalCoordinates = row["geometry"]["coordinates"][0]

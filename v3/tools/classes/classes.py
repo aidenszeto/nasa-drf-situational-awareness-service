@@ -26,10 +26,6 @@ class Water(Flyable):
     WETLAND = "wetland"
 
 
-class Building(Flyable):
-    BUILDING = "building"
-
-
 class School(NotFlyable):
     COLLEGE = "college"
     SCHOOL = "school"

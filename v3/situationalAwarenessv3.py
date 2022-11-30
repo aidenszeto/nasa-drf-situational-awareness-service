@@ -96,8 +96,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
     pois = loads(dumps(db.arizona_static.find()))
     for row in pois:
         if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
-            break
-        print("here")
+            continue
 
         hexagonalCoordinates = row["geometry"]["coordinates"][0]
         if boolHexagonOutsideBoundingBox(hexagonalCoordinates, max_bounds, min_bounds):

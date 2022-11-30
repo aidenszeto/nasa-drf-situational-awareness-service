@@ -56,9 +56,23 @@ def boolHexagonalLineIntersect(hexagonalCoordinates, p1, p2):
             return True
     return False
 
+def boolHexagonOutsideBoundingBox(hexagonalCoordinates, max_bounds, min_bounds):
+    max_bound = True
+    min_bound = True
+    for i in range(0, len(hexagonalCoordinates) - 1):
+        if not max_bound and not min_bound:
+            return False
+        if hexagonalCoordinates[i][0] < max_bounds[0] or hexagonalCoordinates[i][1] < max_bounds[1]:
+            max_bound = False
+        if hexagonalCoordinates[i][0] > min_bounds[0] or hexagonalCoordinates[i][1] > min_bounds[1]:
+            min_bound = False
+    return True
+
 def select_all_tasks(policy_sender, db, trajectory_file):
 
     f = open(trajectory_file, "r")
+    max_bounds = ()
+    min_bounds = ()
 
     # reading from file
     data = json.loads(f.read())
@@ -69,19 +83,28 @@ def select_all_tasks(policy_sender, db, trajectory_file):
     for i in range(len(data["tsim_s"])):
         rows2ListofLists.append(
             [ref_datetime + timedelta(seconds=data["tsim_s"][i]), (data["longitude_deg"][i], data["latitude_deg"][i])])
+        if len(max_bounds) == 0 or len(min_bounds) == 0:
+            max_bounds = (data["longitude_deg"][i], data["latitude_deg"][i])
+            min_bounds = (data["longitude_deg"][i], data["latitude_deg"][i])
+        else:
+            max_bounds = (max(data["longitude_deg"][i], max_bounds[0]), max(data["latitude_deg"][i], max_bounds[1]))
+            min_bounds = (min(data["longitude_deg"][i], min_bounds[0]), min(data["latitude_deg"][i], min_bounds[1]))
 
     f.close()
     
     finalIDarray = []
-    rows1 = loads(dumps(db.arizona_static.find()))
-    for row in rows1:
-        # if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
-        #     break
+    pois = loads(dumps(db.arizona_static.find()))
+    for row in pois:
+        if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
+            break
 
+        hexagonalCoordinates = row["geometry"]["coordinates"][0]
+        if boolHexagonOutsideBoundingBox(hexagonalCoordinates, max_bounds, min_bounds):
+            continue
+        
         start_time = row["properties"]["AVOID_START_TIME"]
         end_time = row["properties"]["AVOID_END_TIME"]
         guid = row["properties"]["GUID"]
-        hexagonalCoordinates = row["geometry"]["coordinates"][0]
 
         for i in range(0, len(rows2ListofLists) - 1):
 
@@ -93,8 +116,8 @@ def select_all_tasks(policy_sender, db, trajectory_file):
             time1 = rows2ListofLists[i][0]
             time2 = rows2ListofLists[i + 1][0]
 
-            # if (end_time < time1 or start_time > time2):
-            #     continue
+            if (end_time < time1 or start_time > time2):
+                continue
 
             boolVal = boolHexagonalLineIntersect(hexagonalCoordinates, (point1[0], point1[1]), (point2[0], point2[1]))
             # adding the ID of the keepout zone cylinder to the final array if an appropriate intersection is found

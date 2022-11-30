@@ -97,6 +97,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
     for row in pois:
         if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
             break
+        print("here")
 
         hexagonalCoordinates = row["geometry"]["coordinates"][0]
         if boolHexagonOutsideBoundingBox(hexagonalCoordinates, max_bounds, min_bounds):

@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 # from pydispatch import dispatcher
 from bson.json_util import dumps, loads
 import json
@@ -65,22 +65,23 @@ def select_all_tasks(policy_sender, db, trajectory_file):
  
     # converting the list of dictionaries from the JSON file to a list of lists
     rows2ListofLists = []
-    for i in range(len(data["tsim_datetime"])):
+    ref_datetime = datetime.utcnow()
+    for i in range(len(data["tsim_s"])):
         rows2ListofLists.append(
-            [data["tsim_datetime"][i], (data["longitude_deg"][i], data["latitude_deg"][i])])
+            [ref_datetime + timedelta(seconds=data["tsim_s"][i]), (data["longitude_deg"][i], data["latitude_deg"][i])])
 
     f.close()
     
-    # empty array that will return upon no intersectfstion
     finalIDarray = []
     rows1 = loads(dumps(db.arizona_static.find()))
-
     for row in rows1:
         # if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
         #     break
 
         start_time = row["properties"]["AVOID_START_TIME"]
         end_time = row["properties"]["AVOID_END_TIME"]
+        guid = row["properties"]["GUID"]
+        hexagonalCoordinates = row["geometry"]["coordinates"][0]
 
         for i in range(0, len(rows2ListofLists) - 1):
 
@@ -89,14 +90,11 @@ def select_all_tasks(policy_sender, db, trajectory_file):
             point2 = [rows2ListofLists[i+1][1][0], rows2ListofLists[i+1][1][1]]
 
             # storing two consecutive trajectory point times
-            time1 = datetime.strptime(rows2ListofLists[i][0], "%Y-%m-%d %H:%M:%S")
-            time2 = datetime.strptime(rows2ListofLists[i + 1][0], "%Y-%m-%d %H:%M:%S")
+            time1 = rows2ListofLists[i][0]
+            time2 = rows2ListofLists[i + 1][0]
 
             # if (end_time < time1 or start_time > time2):
             #     continue
-
-            guid = row["properties"]["GUID"]
-            hexagonalCoordinates = row["geometry"]["coordinates"][0]
 
             boolVal = boolHexagonalLineIntersect(hexagonalCoordinates, (point1[0], point1[1]), (point2[0], point2[1]))
             # adding the ID of the keepout zone cylinder to the final array if an appropriate intersection is found

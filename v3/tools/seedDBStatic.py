@@ -1,8 +1,8 @@
 # First argument is the name of the geojson file to upload
-# Second argument is a if the file contains zones that are always active
+# Second argument is a if the file contains zones that are always avoided
 # 
-# python3 seedDBStatic.py file a --> zones always active
-# python3 seedDBStatic.py file --> zones not always active
+# python3 seedDBStatic.py arizona-geojson/gis_osm_pois_a_free_1.geojson a --> zones always avoid
+# python3 seedDBStatic.py arizona-geojson/gis_osm_pois_a_free_1.geojson --> zones not always avoid
 
 import pymongo
 import sys

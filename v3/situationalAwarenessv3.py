@@ -121,12 +121,12 @@ def select_all_tasks(policy_sender, db, trajectory_file):
 
             boolVal = boolHexagonalLineIntersect(hexagonalCoordinates, (point1[0], point1[1]), (point2[0], point2[1]))
             # adding the ID of the keepout zone cylinder to the final array if an appropriate intersection is found
-            if (boolVal == True):
-                finalIDarray.append(guid)
-                # dispatcher.send(signal=CONFLICT_SIGNAL, sender=policy_sender, row=row, time=f"{time1} - {time2}")
-                
-            # removing potential duplicates when two line segments fall within the same cylinder
-            finalIDarray = list(dict.fromkeys(finalIDarray))
+            if (boolVal == True):        
+                if guid not in finalIDarray:
+                    finalIDarray.append(guid)
+                    # dispatcher.send(signal=CONFLICT_SIGNAL, sender=policy_sender, row=row, time=f"{time1} - {time2}")
+                    with open("conflicts.json", "w") as outfile:
+                        outfile.write(row, indent=4)
                 
     # returning final list of ID(s), if any      
     return (finalIDarray)           
@@ -145,7 +145,7 @@ def mainBuildRegion():
     if (len(sys.argv) > 1):
         conflicts = select_all_tasks(
             policy_sender, zones, sys.argv[1])
-        print("No conflicts" if len(conflicts) == 0 else conflicts)
+        print("No conflicts" if len(conflicts) == 0 else "Conflicts listed in conflicts.json")
     else:
         get_zones(zones)
     

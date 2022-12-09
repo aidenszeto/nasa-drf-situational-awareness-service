@@ -93,6 +93,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
     f.close()
     
     finalIDarray = []
+    conflicts = []
     pois = loads(dumps(db.arizona_static.find()))
     for row in pois:
         if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
@@ -125,10 +126,19 @@ def select_all_tasks(policy_sender, db, trajectory_file):
                 if guid not in finalIDarray:
                     finalIDarray.append(guid)
                     # dispatcher.send(signal=CONFLICT_SIGNAL, sender=policy_sender, row=row, time=f"{time1} - {time2}")
-                    with open("conflicts.json", "w") as outfile:
-                        outfile.write(row, indent=4)
+                    row.pop("_id", None)
+                    row["properties"]["stroke"] = "#ffaa00"
+                    row["properties"]["stroke-width"] = 2
+                    row["properties"]["stroke-opacity"] = 1
+                    conflicts.append(row)
                 
-    # returning final list of ID(s), if any      
+    with open("conflicts.json", "w") as outfile:
+        conflicts_list = {
+            "type": "FeatureCollection",
+            "features": conflicts
+        }
+        outfile.write(dumps(conflicts_list, indent=4))
+
     return (finalIDarray)           
 
 def get_zones(db):

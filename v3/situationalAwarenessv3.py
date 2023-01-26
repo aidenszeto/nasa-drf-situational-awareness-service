@@ -3,10 +3,17 @@ from datetime import datetime, timedelta
 from bson.json_util import dumps, loads
 import json
 import pymongo
-import sys
+import argparse
+import geopandas as gpd
+import matplotlib.pyplot as plt
+from shapely.geometry import Polygon
+import math
+import plotly.express as px
 
 CONFLICT_SIGNAL = "trajectory-zone-conflict"
 CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?retryWrites=true&w=majority"
+OUT_FILE = "conflicts.geojson"
+MAP_FILE = "conflicts_map.geojson"
 
 """
 BELOW IS THE CODE TO DETERMINE IF A CERTAIN TRAJECTORY IS ENTERING A KEEPOUT ZONE IN REAL-TIME.
@@ -14,26 +21,20 @@ BELOW IS THE CODE TO DETERMINE IF A CERTAIN TRAJECTORY IS ENTERING A KEEPOUT ZON
 SAMPLE COMMANDS TO RUN SCRIPT:
 ------------------------------
 // Version 1: input trajectory JSON, output conflicts
-python situationalAwarenessv3.py trajectory_request_geo.json
+python situationalAwarenessv3.py route1.json
 // FALSE output (no zone matches):
 >>No conflicts
 
 // TRUE output (some zone match(es):
->><object object at 0x7f9c68d14f00>: Trajectory has a conflict with following zone from 2022-08-30 16:00:32 - 2022-08-30 16:10:32: 
- ==================================== 
- {"type": "CPE_NOTIFICATION_RESP", "geometry": {"type": "Polygon", "coordinates": [[[1, 1], [3, 3], [-112.07487793157966, 33.35969
- 573361516], [-112.1154646018878, 33.37213303894667], [-112.14910880414443, 33.34917391297312], [-112.14216470823824, 33.313784835
- 21286], [-112.10159788091084, 33.30135043883555]]]}, "properties": {"TIME": "2022-08-30 16:05:32", "TYPE": "GEO", "EVENT": "EMSAL
- ERT", "GUID": "GUID", "SEGMENT": "SEGMENT", "RANGE": 0, "VECTOR": 0, "ALT": 0, "class": "FLIGHTCOORIDOR"}}
-["GUID"]
+>>Conflicts listed in conflicts.json
 
-// Version 2: no input, output JSON file with list of all the flyable and non-flyable hexagons ("phoenix_zones.json")
+// Version 2: input trajectory JSON with -m flag, displays map with conflicts detected plotted
+python situationalAwarenessv3.py route1.json -m
+>>Conflicts listed in conflicts.json
+
+// Version 3: No input, output JSON file with list of all the flyable and non-flyable hexagons ("phoenix_zones.json")
 python situationalAwarenessv3.py
->>[{"_id": ObjectId("63491476cf751ad7ed637ff1"), "type": "example", "geometry": {"type": "Polygon", "coordinates": [[[1, 1], [3, 3
-], [-112.07487793157966, 33.35969573361516], [-112.1154646018878, 33.37213303894667], [-112.14910880414443, 33.34917391297312], [-
-112.14216470823824, 33.31378483521286], [-112.10159788091084, 33.30135043883555]]]}, "properties": {"ALT": 0, "EVENT": "EMSALERT",
- "GUID": "GUID", "RANGE": 0, "SEGMENT": "SEGMENT", "TIME": "2022-08-30 16:05:32", "TYPE": "GEO", "VECTOR": 0, "active": 1, "class":
-  "FLIGHTCOORIDOR", "static": 0}}, ...
+>>Database dumped to phoenix_zones.json
 """
 
 def getCollection():
@@ -47,6 +48,14 @@ def ccw(A, B, C):
 # Return true if line segments AB and CD intersect
 def intersect(A, B, C, D):
     return ccw(A, C, D) != ccw(B, C, D) and ccw(A, B, C) != ccw(A, B, D)
+
+def centroid(vertexes):
+    _x_list = [vertex[0] for vertex in vertexes]
+    _y_list = [vertex[1] for vertex in vertexes]
+    _len = len(vertexes)
+    _x = sum(_x_list) / _len
+    _y = sum(_y_list) / _len
+    return (_x, _y)
 
 def boolHexagonalLineIntersect(hexagonalCoordinates, p1, p2):
     for i in range(0, len(hexagonalCoordinates) - 1):
@@ -94,6 +103,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
     
     finalIDarray = []
     conflicts = []
+    conflicts_map = []
     pois = loads(dumps(db.arizona_static.find()))
     for row in pois:
         if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
@@ -130,16 +140,36 @@ def select_all_tasks(policy_sender, db, trajectory_file):
                     row["properties"]["stroke"] = "#ffaa00"
                     row["properties"]["stroke-width"] = 2
                     row["properties"]["stroke-opacity"] = 1
+                    c = centroid(row["geometry"]["coordinates"][0])
+                    radius = math.dist(c, row["geometry"]["coordinates"][0][0])
+                    conflicts_map.append({
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [c[0], c[1]]
+                        },
+                        "properties": {
+                            "radius": radius
+                        }
+                    })
                     conflicts.append(row)
                 
-    with open("conflicts.json", "w") as outfile:
+    with open(OUT_FILE, "w") as outfile:
         conflicts_list = {
             "type": "FeatureCollection",
             "features": conflicts
         }
         outfile.write(dumps(conflicts_list, indent=4))
 
-    return (finalIDarray)           
+    with open(MAP_FILE, "w") as outfile:
+        conflicts_map = {
+            "type": "FeatureCollection",
+            "features": conflicts_map
+        }
+        outfile.write(dumps(conflicts_map, indent=4))
+
+
+    return (finalIDarray)        
 
 def get_zones(db):
     with open("phoenix_zones.json", "w") as outfile:
@@ -151,13 +181,30 @@ def get_zones(db):
 def mainBuildRegion():
     policy_sender = object()
     # dispatcher.connect(trajectory_service, signal=CONFLICT_SIGNAL, sender=dispatcher.Any)
+    parser = argparse.ArgumentParser(
+        description="This program takes in a json trajectory route and identifies conflicts between the trajectory and a POI database"
+        )
+    parser.add_argument("filename", nargs="*", default=["-"])
+    parser.add_argument("-m", action="store_true")
+    args = parser.parse_args()
+
     zones = getCollection()
-    if (len(sys.argv) > 1):
-        conflicts = select_all_tasks(
-            policy_sender, zones, sys.argv[1])
-        print("No conflicts" if len(conflicts) == 0 else "Conflicts listed in conflicts.json")
-    else:
+    if args.filename[0] == "-":
         get_zones(zones)
+        print("Database dumped to phoenix_zones.json")
+    else:
+        conflicts = select_all_tasks(
+            policy_sender, zones, args.filename[0])
+        print("No conflicts" if len(conflicts) == 0 else "Conflicts listed in conflicts.json")
+        if args.m:
+            conflicts = gpd.read_file(MAP_FILE)
+            fig = px.scatter_mapbox(
+                conflicts, lat=conflicts.geometry.y, lon=conflicts.geometry.x, size="radius")
+            fig.update_layout(mapbox_style="open-street-map")
+            fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
+            fig.show()
+
+
     
 if __name__ == "__main__":
     mainBuildRegion()

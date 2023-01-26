@@ -3,5 +3,6 @@ v3/tools/arizona-latest-free.shp
 v3/tools/dump_poi
 v3/dump
 v3/phoenix_zones.json
-v3/conflicts.json
+v3/conflicts.geojson
+v3/conflicts_map.geojson
 v1/test1.db

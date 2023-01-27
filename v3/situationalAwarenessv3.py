@@ -5,9 +5,8 @@ import json
 import pymongo
 import argparse
 import geopandas as gpd
-import matplotlib.pyplot as plt
-from shapely.geometry import Polygon
 import math
+import numpy as np
 import plotly.express as px
 
 CONFLICT_SIGNAL = "trajectory-zone-conflict"
@@ -104,7 +103,18 @@ def select_all_tasks(policy_sender, db, trajectory_file):
     finalIDarray = []
     conflicts = []
     conflicts_map = []
+    route_map = {
+        "type": "Feature",
+        "geometry": {
+            "type": "LineString",
+            "coordinates": []
+        },
+        "properties": {
+            "event": "Trajectory"
+        }
+    }
     pois = loads(dumps(db.arizona_static.find()))
+    add_routes = True
     for row in pois:
         if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
             continue
@@ -122,6 +132,8 @@ def select_all_tasks(policy_sender, db, trajectory_file):
             # storing two consecutive trajectory points
             point1 = [rows2ListofLists[i][1][0], rows2ListofLists[i][1][1]]
             point2 = [rows2ListofLists[i+1][1][0], rows2ListofLists[i+1][1][1]]
+            if add_routes:
+                route_map["geometry"]["coordinates"].append(point1)
 
             # storing two consecutive trajectory point times
             time1 = rows2ListofLists[i][0]
@@ -134,26 +146,31 @@ def select_all_tasks(policy_sender, db, trajectory_file):
             # adding the ID of the keepout zone cylinder to the final array if an appropriate intersection is found
             if (boolVal == True):        
                 if guid not in finalIDarray:
+                    hexagonalCoordinates.append(hexagonalCoordinates[0])
                     finalIDarray.append(guid)
                     # dispatcher.send(signal=CONFLICT_SIGNAL, sender=policy_sender, row=row, time=f"{time1} - {time2}")
                     row.pop("_id", None)
                     row["properties"]["stroke"] = "#ffaa00"
                     row["properties"]["stroke-width"] = 2
                     row["properties"]["stroke-opacity"] = 1
-                    c = centroid(row["geometry"]["coordinates"][0])
-                    radius = math.dist(c, row["geometry"]["coordinates"][0][0])
                     conflicts_map.append({
                         "type": "Feature",
                         "geometry": {
-                            "type": "Point",
-                            "coordinates": [c[0], c[1]]
+                            "type": "LineString",
+                            "coordinates": hexagonalCoordinates
                         },
                         "properties": {
-                            "radius": radius
+                            "event": row["properties"]["EVENT"]
                         }
                     })
                     conflicts.append(row)
-                
+            
+        add_routes = False
+
+    route_map["geometry"]["coordinates"].append([rows2ListofLists[len(rows2ListofLists) - 1]
+                     [1][0], rows2ListofLists[len(rows2ListofLists) - 1][1][1]])
+    conflicts_map.append(route_map)
+
     with open(OUT_FILE, "w") as outfile:
         conflicts_list = {
             "type": "FeatureCollection",
@@ -195,13 +212,27 @@ def mainBuildRegion():
     else:
         conflicts = select_all_tasks(
             policy_sender, zones, args.filename[0])
-        print("No conflicts" if len(conflicts) == 0 else "Conflicts listed in conflicts.json")
+        print("No conflicts" if len(conflicts) == 0 else "Conflicts listed in", OUT_FILE)
         if args.m:
             conflicts = gpd.read_file(MAP_FILE)
-            fig = px.scatter_mapbox(
-                conflicts, lat=conflicts.geometry.y, lon=conflicts.geometry.x, size="radius")
-            fig.update_layout(mapbox_style="open-street-map")
-            fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
+            lats = []
+            lons = []
+            names = []
+
+            for feature, name in zip(conflicts.geometry, conflicts.event):
+                linestrings = [feature]
+                for linestring in linestrings:
+                    x, y = linestring.xy
+                    lats = np.append(lats, y)
+                    lons = np.append(lons, x)
+                    names = np.append(names, [name]*len(y))
+                    lats = np.append(lats, None)
+                    lons = np.append(lons, None)
+                    names = np.append(names, None)
+
+            fig = px.line_mapbox(lat=lats, lon=lons, hover_name=names,
+                                 mapbox_style="stamen-terrain")
+            fig.update_layout(mapbox_zoom=10, mapbox_center_lat=33.37)
             fig.show()
 
 

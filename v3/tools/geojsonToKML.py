@@ -2,7 +2,7 @@ import simplekml
 import json
 import argparse
 
-OUT_FILE = "../conflicts_map.kml"
+OUT_FILE = "conflicts_map.kml"
 
 parser = argparse.ArgumentParser(
     description="This program takes in a json trajectory route and identifies conflicts between the trajectory and a POI database"

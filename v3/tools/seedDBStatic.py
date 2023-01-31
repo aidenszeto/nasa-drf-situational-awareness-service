@@ -1,7 +1,7 @@
 # First argument is the name of the geojson file to upload
 # Second argument is a if the file contains zones that are always avoided
 # 
-# python3 seedDBStatic.py arizona-geojson/gis_osm_pois_a_free_1.geojson a --> zones always avoid
+# python3 seedDBStatic.py arizona-geojson/gis_osm_pois_a_free_1.geojson -a --> zones always avoid
 # python3 seedDBStatic.py arizona-geojson/gis_osm_pois_a_free_1.geojson --> zones not always avoid
 
 import pymongo
@@ -10,8 +10,9 @@ import json
 import numpy
 import math
 import matplotlib.path as mplPath
+import argparse
 from datetime import datetime
-from classes.classes import Water, School, Government, Health, Retail, Entertainment, Outdoors, Food, Housing, Service, Tower
+from classes.classes import Water, School, Government, Hospital, Health, Retail, Entertainment, Outdoors, Food, Housing, Service, Tower, Airport, Bus
 
 
 CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?retryWrites=true&w=majority"
@@ -73,15 +74,17 @@ def main(file, always_avoid):
         if fclass in Water:
             fclass = "Flyable.Water"
         elif fclass in School:
-            fclass = "NotFlyable.School"
+            fclass = "Flyable.School"
         elif fclass in Government:
-            fclass = "NotFlyable.Government"
+            fclass = "Flyable.Government"
         elif fclass in Tower:
             fclass = "NotFlyable.Tower"
         elif fclass in Service:
             fclass = "Flyable.Service"
+        elif fclass in Hospital:
+            fclass = "NotFlyable.Hospital"
         elif fclass in Health:
-            fclass = "NotFlyable.Health"
+            fclass = "Flyable.Health"
         elif fclass in Retail:
             fclass = "Flyable.Retail"
         elif fclass in Entertainment:
@@ -92,6 +95,10 @@ def main(file, always_avoid):
             fclass = "Flyable.Food"
         elif fclass in Housing:
             fclass = "Flyable.Housing"
+        elif fclass in Airport:
+            fclass = "NotFlyable.Airport"
+        elif fclass in Bus:
+            fclass = "Flyable.Bus"
         else:
             fclass = "Flyable.Misc"
 
@@ -116,5 +123,11 @@ def main(file, always_avoid):
         })
 
 if __name__ == '__main__':
-    main(sys.argv[1], True if (len(sys.argv) ==
-         3 and sys.argv[2] == "a") else False)
+    parser = argparse.ArgumentParser(
+        description="This program takes in a geojson file containing POIs and seeds a database with fly or no-fly zones"
+    )
+    parser.add_argument("filename", nargs=1)
+    parser.add_argument("-a", action="store_true")
+    args = parser.parse_args()
+
+    main(args.filename[0], args.a)

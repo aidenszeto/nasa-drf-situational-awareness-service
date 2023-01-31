@@ -110,7 +110,8 @@ def select_all_tasks(policy_sender, db, trajectory_file):
             "coordinates": []
         },
         "properties": {
-            "event": "Trajectory"
+            "event": "Trajectory",
+            "avoid_class": "Trajectory"
         }
     }
     pois = loads(dumps(db.arizona_static.find()))
@@ -160,7 +161,8 @@ def select_all_tasks(policy_sender, db, trajectory_file):
                             "coordinates": hexagonalCoordinates
                         },
                         "properties": {
-                            "event": row["properties"]["EVENT"]
+                            "event": row["properties"]["EVENT"],
+                            "avoid_class": row["properties"]["AVOID_CLASS"]
                         }
                     })
                     conflicts.append(row)
@@ -218,20 +220,25 @@ def mainBuildRegion():
             lats = []
             lons = []
             names = []
+            avoid_classes = []
 
-            for feature, name in zip(conflicts.geometry, conflicts.event):
+            for feature, name, avoid_class in zip(conflicts.geometry, conflicts.event, conflicts.avoid_class):
                 linestrings = [feature]
                 for linestring in linestrings:
                     x, y = linestring.xy
                     lats = np.append(lats, y)
                     lons = np.append(lons, x)
                     names = np.append(names, [name]*len(y))
+                    avoid_classes = np.append(avoid_classes, [avoid_class]*len(y))
                     lats = np.append(lats, None)
                     lons = np.append(lons, None)
                     names = np.append(names, None)
+                    avoid_classes = np.append(avoid_classes, None)
 
+            color_sequence = ["#FF2D00", "#FF9200", "#FFF300", "#0015FF"]
             fig = px.line_mapbox(lat=lats, lon=lons, hover_name=names,
-                                 mapbox_style="stamen-terrain")
+                                 mapbox_style="stamen-terrain", color=avoid_classes,
+                                 color_discrete_sequence=color_sequence)
             fig.update_layout(mapbox_zoom=10, mapbox_center_lat=33.37)
             fig.show()
 

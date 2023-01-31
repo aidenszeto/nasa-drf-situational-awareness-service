@@ -26,14 +26,14 @@ class Water(Flyable):
     WETLAND = "wetland"
 
 
-class School(NotFlyable):
+class School(Flyable):
     COLLEGE = "college"
     SCHOOL = "school"
     UNIVERSITY = "university"
     KINDERGARTEN = "kindergarten"
 
 
-class Government(NotFlyable):
+class Government(Flyable):
     FIRE_STATION = "fire_station"
     POLICE = "police"
     COURTHOUSE = "courthouse"
@@ -57,6 +57,10 @@ class Tower(NotFlyable):
     OBSERVATION_TOWER = "observation_tower"
 
 
+class Hospital(NotFlyable):
+    HOSPITAL = "hospital"
+
+
 class Service(Flyable):
     STATIONERY = "stationery"
     LAUNDRY = "laundry"
@@ -70,9 +74,8 @@ class Service(Flyable):
     TOILET = "toilet"
 
 
-class Health(NotFlyable):
+class Health(Flyable):
     VETERINARY = "veterinary"
-    HOSPITAL = "hospital"
     OPTICIAN = "optician"
     DENTIST = "dentist"
     DOCTORS = "doctors"
@@ -178,3 +181,15 @@ class Misc(Flyable):
     WAYSIDE_SHRINE = "wayside_shrine"
     GRAVEYARD = "graveyard"
     MONUMENT = "monument"
+
+
+class Airport(NotFlyable):
+    AIRPORT = "airport"
+    AIRFIELD = "airfield"
+    APRON = "apron"
+    HELIPAD = "helipad"
+
+
+class Bus(Flyable):
+    BUS_STOP = "bus_stop"
+    BUS_STATION = "bus_station"

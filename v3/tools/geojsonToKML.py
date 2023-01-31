@@ -16,18 +16,11 @@ with open(args.filename[0]) as f:
     for feature in data['features']:
         geom = feature['geometry']
         geom_type = geom['type']
-        if geom_type == 'Polygon':
-            kml.newpolygon(name='test',
-                        description='test',
-                        outerboundaryis=geom['coordinates'][0])
-        elif geom_type == 'LineString':
-            kml.newlinestring(name='test',
-                            description='test',
+        properties = feature['properties']
+        if geom_type == 'LineString':
+            kml.newlinestring(name=properties['avoid_class'],
+                            description=properties['event'],
                             coords=geom['coordinates'])
-        elif geom_type == 'Point':
-            kml.newpoint(name='test',
-                        description='test',
-                        coords=[geom['coordinates']])
         else:
             print("ERROR: unknown type:", geom_type)
 kml.save(OUT_FILE)

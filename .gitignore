@@ -5,4 +5,5 @@ v3/dump
 v3/phoenix_zones.json
 v3/conflicts.geojson
 v3/conflicts_map.geojson
+v3/conflicts_map.kml
 v1/test1.db

@@ -6,4 +6,7 @@ v3/phoenix_zones.json
 v3/conflicts.geojson
 v3/conflicts_map.geojson
 v3/conflicts_map.kml
+v3/tools/output_data_miscdsp_cs_comm_latency.kml
+v3/tools/output_data_miscdsp_cs_comm_latency.json
+v3/output.kml
 v1/test1.db

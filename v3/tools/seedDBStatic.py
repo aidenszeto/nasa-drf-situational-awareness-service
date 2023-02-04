@@ -116,11 +116,12 @@ def main(file, always_avoid):
             "type": "Polygon",
             "coordinates": [smallestCircumscribingHexagon(zones[i])]
         }
-        arizona_static.insert_one({
-            "type": "Feature",
-            "geometry": geometry,
-            "properties": properties
-        })
+        if fclass[:3] == "Not":
+            arizona_static.insert_one({
+                "type": "Feature",
+                "geometry": geometry,
+                "properties": properties
+            })
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(

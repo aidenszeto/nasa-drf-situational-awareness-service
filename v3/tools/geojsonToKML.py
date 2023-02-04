@@ -27,7 +27,7 @@ with open(args.files[0]) as f:
                               coords=geom['coordinates'])
         elif geom_type == 'Polygon':
             avoid_class = properties['AVOID_CLASS'] if 'AVOID_CLASS' in properties else ''
-            event = properties['EVENT'] if 'EVENT' in properties else ''
+            event = properties['EVENT'] if properties['EVENT'] != None else properties['CLASS']
             pol = kml.newpolygon(name=avoid_class,
                            description=event,
                            outerboundaryis=feature['geometry']['coordinates'][0])

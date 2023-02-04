@@ -1792,11 +1792,17 @@
                 [
                     -111.70920710758848,
                     32.88222052527816
+                ],
+                [
+                    -111.7796377,
+                    32.9083655
                 ]
             ]
         },
         "properties": {
-            "event": "Trajectory"
+            "event": "Trajectory",
+            "fclass": "Trajectory",
+            "avoid_class": "Trajectory"
         }
     }
 }

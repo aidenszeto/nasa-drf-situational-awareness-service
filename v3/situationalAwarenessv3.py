@@ -12,7 +12,7 @@ import plotly.express as px
 CONFLICT_SIGNAL = "trajectory-zone-conflict"
 CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?retryWrites=true&w=majority"
 OUT_FILE = "conflicts.geojson"
-MAP_FILE = "conflicts_map.geojson"
+MAP_FILE = "route1.geojson"
 
 """
 BELOW IS THE CODE TO DETERMINE IF A CERTAIN TRAJECTORY IS ENTERING A KEEPOUT ZONE IN REAL-TIME.
@@ -111,6 +111,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
         },
         "properties": {
             "event": "Trajectory",
+            "fclass": "Trajectory",
             "avoid_class": "Trajectory"
         }
     }
@@ -162,6 +163,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
                         },
                         "properties": {
                             "event": row["properties"]["EVENT"],
+                            "fclass": row["properties"]["CLASS"],
                             "avoid_class": row["properties"]["AVOID_CLASS"]
                         }
                     })
@@ -181,11 +183,11 @@ def select_all_tasks(policy_sender, db, trajectory_file):
         outfile.write(dumps(conflicts_list, indent=4))
 
     with open(MAP_FILE, "w") as outfile:
-        conflicts_map = {
+        route_map = {
             "type": "FeatureCollection",
-            "features": conflicts_map
+            "features": route_map
         }
-        outfile.write(dumps(conflicts_map, indent=4))
+        outfile.write(dumps(route_map, indent=4))
 
 
     return (finalIDarray)        
@@ -222,13 +224,13 @@ def mainBuildRegion():
             names = []
             avoid_classes = []
 
-            for feature, name, avoid_class in zip(conflicts.geometry, conflicts.event, conflicts.avoid_class):
+            for feature, event, fclass, avoid_class in zip(conflicts.geometry, conflicts.event, conflicts.fclass, conflicts.avoid_class):
                 linestrings = [feature]
                 for linestring in linestrings:
                     x, y = linestring.xy
                     lats = np.append(lats, y)
                     lons = np.append(lons, x)
-                    names = np.append(names, [name]*len(y))
+                    names = np.append(names, [event if event else fclass]*len(y))
                     avoid_classes = np.append(avoid_classes, [avoid_class]*len(y))
                     lats = np.append(lats, None)
                     lons = np.append(lons, None)

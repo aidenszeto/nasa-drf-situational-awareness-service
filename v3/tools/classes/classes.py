@@ -186,7 +186,6 @@ class Misc(Flyable):
 class Airport(NotFlyable):
     AIRPORT = "airport"
     AIRFIELD = "airfield"
-    APRON = "apron"
     HELIPAD = "helipad"
 
 

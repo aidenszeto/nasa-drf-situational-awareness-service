@@ -12,7 +12,7 @@ import plotly.express as px
 CONFLICT_SIGNAL = "trajectory-zone-conflict"
 CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?retryWrites=true&w=majority"
 OUT_FILE = "conflicts.geojson"
-MAP_FILE = "route1.geojson"
+MAP_FILE = "conflicts_map.geojson"
 
 """
 BELOW IS THE CODE TO DETERMINE IF A CERTAIN TRAJECTORY IS ENTERING A KEEPOUT ZONE IN REAL-TIME.
@@ -145,6 +145,8 @@ def select_all_tasks(policy_sender, db, trajectory_file):
                 continue
 
             boolVal = boolHexagonalLineIntersect(hexagonalCoordinates, (point1[0], point1[1]), (point2[0], point2[1]))
+            if row["properties"]["CLASS"] == "airport":
+                boolVal = True
             # adding the ID of the keepout zone cylinder to the final array if an appropriate intersection is found
             if (boolVal == True):        
                 if guid not in finalIDarray:
@@ -183,11 +185,11 @@ def select_all_tasks(policy_sender, db, trajectory_file):
         outfile.write(dumps(conflicts_list, indent=4))
 
     with open(MAP_FILE, "w") as outfile:
-        route_map = {
+        conflicts_map = {
             "type": "FeatureCollection",
-            "features": route_map
+            "features": conflicts_map
         }
-        outfile.write(dumps(route_map, indent=4))
+        outfile.write(dumps(conflicts_map, indent=4))
 
 
     return (finalIDarray)        

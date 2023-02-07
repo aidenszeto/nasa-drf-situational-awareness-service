@@ -64,16 +64,15 @@ def boolHexagonalLineIntersect(hexagonalCoordinates, p1, p2):
             return True
     return False
 
-def boolHexagonOutsideBoundingBox(hexagonalCoordinates, max_bounds, min_bounds):
-    max_bound = True
-    min_bound = True
+def boolHexagonInsideBoundingBox(hexagonalCoordinates, max_bounds, min_bounds):
+    points_out_of_bounds = 0
     for i in range(0, len(hexagonalCoordinates) - 1):
-        if not max_bound and not min_bound:
-            return False
-        if hexagonalCoordinates[i][0] < max_bounds[0] or hexagonalCoordinates[i][1] < max_bounds[1]:
-            max_bound = False
-        if hexagonalCoordinates[i][0] > min_bounds[0] or hexagonalCoordinates[i][1] > min_bounds[1]:
-            min_bound = False
+        if hexagonalCoordinates[i][0] > max_bounds[0] or hexagonalCoordinates[i][1] > max_bounds[1]:
+            points_out_of_bounds += 1
+        elif hexagonalCoordinates[i][0] < min_bounds[0] or hexagonalCoordinates[i][1] < min_bounds[1]:
+            points_out_of_bounds += 1
+    if points_out_of_bounds >= len(hexagonalCoordinates) - 1:
+        return False
     return True
 
 def select_all_tasks(policy_sender, db, trajectory_file):
@@ -100,7 +99,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
 
     f.close()
     
-    finalIDarray = []
+    finalIDarray = set()
     conflicts = []
     conflicts_map = []
     route_map = {
@@ -122,12 +121,15 @@ def select_all_tasks(policy_sender, db, trajectory_file):
             continue
 
         hexagonalCoordinates = row["geometry"]["coordinates"][0]
-        if boolHexagonOutsideBoundingBox(hexagonalCoordinates, max_bounds, min_bounds):
+        hexagonalCoordinates.append(hexagonalCoordinates[0])
+        if not boolHexagonInsideBoundingBox(hexagonalCoordinates, max_bounds, min_bounds):
             continue
         
         start_time = row["properties"]["AVOID_START_TIME"]
         end_time = row["properties"]["AVOID_END_TIME"]
         guid = row["properties"]["GUID"]
+
+        airport_or_tower_added = False
 
         for i in range(0, len(rows2ListofLists) - 1):
 
@@ -144,19 +146,19 @@ def select_all_tasks(policy_sender, db, trajectory_file):
             if (end_time < time1 or start_time > time2):
                 continue
 
-            boolVal = boolHexagonalLineIntersect(hexagonalCoordinates, (point1[0], point1[1]), (point2[0], point2[1]))
-            if row["properties"]["CLASS"] == "airport":
-                boolVal = True
+            conflicting = boolHexagonalLineIntersect(hexagonalCoordinates, (point1[0], point1[1]), (point2[0], point2[1]))
+
+            row.pop("_id", None)
+            row["properties"]["stroke"] = "#ffaa00"
+            row["properties"]["stroke-width"] = 2
+            row["properties"]["stroke-opacity"] = 1
+
             # adding the ID of the keepout zone cylinder to the final array if an appropriate intersection is found
-            if (boolVal == True):        
+            if conflicting:
                 if guid not in finalIDarray:
-                    hexagonalCoordinates.append(hexagonalCoordinates[0])
-                    finalIDarray.append(guid)
+                    finalIDarray.add(guid)
                     # dispatcher.send(signal=CONFLICT_SIGNAL, sender=policy_sender, row=row, time=f"{time1} - {time2}")
-                    row.pop("_id", None)
-                    row["properties"]["stroke"] = "#ffaa00"
-                    row["properties"]["stroke-width"] = 2
-                    row["properties"]["stroke-opacity"] = 1
+                    row["properties"]["conflicting"] = True
                     conflicts_map.append({
                         "type": "Feature",
                         "geometry": {
@@ -170,6 +172,13 @@ def select_all_tasks(policy_sender, db, trajectory_file):
                         }
                     })
                     conflicts.append(row)
+            # always display airports/airfields/helipads and towers
+            elif (row["properties"]["AVOID_CLASS"] == "NotFlyable.Airport" or row["properties"]["AVOID_CLASS"] == "NotFlyable.Tower"):
+                if not airport_or_tower_added:
+                    hexagonalCoordinates.append(hexagonalCoordinates[0])
+                    row["properties"]["conflicting"] = False
+                    conflicts.append(row)
+                    airport_or_tower_added = True
             
         add_routes = False
 
@@ -192,7 +201,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
         outfile.write(dumps(conflicts_map, indent=4))
 
 
-    return (finalIDarray)        
+    return finalIDarray
 
 def get_zones(db):
     with open("phoenix_zones.json", "w") as outfile:

@@ -28,20 +28,27 @@ with open(args.files[0]) as f:
         elif geom_type == 'Polygon':
             avoid_class = properties['AVOID_CLASS'] if 'AVOID_CLASS' in properties else ''
             event = properties['EVENT'] if properties['EVENT'] != None else properties['CLASS']
+            conflicting = properties['conflicting']
             pol = kml.newpolygon(name=avoid_class,
                            description=event,
                            outerboundaryis=feature['geometry']['coordinates'][0])
             if avoid_class == 'NotFlyable.Hospital':
                 outline = simplekml.Color.yellow
             elif avoid_class == 'NotFlyable.Tower':
-                outline = simplekml.Color.orange
+                if conflicting:
+                    outline = simplekml.Color.orange
+                else:
+                    outline = simplekml.Color.darkgray
             elif avoid_class == 'NotFlyable.Airport':
-                outline = simplekml.Color.red
+                if conflicting:
+                    outline = simplekml.Color.red
+                else:
+                    outline = simplekml.Color.black
             else:
                 outline = simplekml.Color.grey
             pol.style.linestyle.color = outline
             pol.style.polystyle.color = simplekml.Color.changealphaint(
-                75, outline)
+                50, outline)
         else:
             print("ERROR: unknown type:", geom_type)
 

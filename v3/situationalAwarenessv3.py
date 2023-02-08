@@ -272,6 +272,14 @@ def select_all_tasks(policy_sender, db, trajectory_file):
         }
         outfile.write(dumps(conflicts_map, indent=4))
 
+    route_file = trajectory_file[:trajectory_file.index(".")] + ".geojson"
+    with open(route_file, "w") as outfile:
+        route_map = {
+            "type": "FeatureCollection",
+            "features": route_map
+        }
+        outfile.write(dumps(route_map, indent=4))
+
 
     return finalIDarray
 
@@ -333,6 +341,8 @@ def mainBuildRegion():
 
     route_file = args.filename[0][:args.filename[0].index(".")] + ".geojson"
     geojsonToKML(OUT_FILE, route_file, KML_FILE)
+    print("KML file: ", KML_FILE)
+    print("Route file: ", route_file)
 
 
 if __name__ == "__main__":

@@ -38,7 +38,7 @@ with open(args.files[0]) as f:
                 if conflicting:
                     outline = simplekml.Color.orange
                 else:
-                    outline = simplekml.Color.darkgray
+                    outline = simplekml.Color.saddlebrown
             elif avoid_class == 'NotFlyable.Airport':
                 if conflicting:
                     outline = simplekml.Color.red

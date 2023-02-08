@@ -56,7 +56,7 @@ def smallestCircumscribingHexagon(zone):
 
 def main(file, always_avoid):
     notification = createConnection()
-    arizona_static = notification.arizona_static
+    arizona = notification.arizona
 
     f = open(file, "r")
     data = json.loads(f.read())
@@ -117,7 +117,7 @@ def main(file, always_avoid):
             "coordinates": [smallestCircumscribingHexagon(zones[i])]
         }
         if fclass[:3] == "Not":
-            arizona_static.insert_one({
+            arizona.insert_one({
                 "type": "Feature",
                 "geometry": geometry,
                 "properties": properties

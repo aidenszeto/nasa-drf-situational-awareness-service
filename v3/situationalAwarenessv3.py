@@ -7,12 +7,9 @@ import argparse
 import geopandas as gpd
 import math
 import numpy as np
+import simplekml
 import plotly.express as px
 
-CONFLICT_SIGNAL = "trajectory-zone-conflict"
-CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?retryWrites=true&w=majority"
-OUT_FILE = "conflicts.geojson"
-MAP_FILE = "conflicts_map.geojson"
 
 """
 BELOW IS THE CODE TO DETERMINE IF A CERTAIN TRAJECTORY IS ENTERING A KEEPOUT ZONE IN REAL-TIME.
@@ -36,18 +33,32 @@ python situationalAwarenessv3.py
 >>Database dumped to phoenix_zones.json
 """
 
+
+CONFLICT_SIGNAL = "trajectory-zone-conflict"
+CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?retryWrites=true&w=majority"
+OUT_FILE = "conflicts.geojson"
+MAP_FILE = "conflicts_map.geojson"
+KML_FILE = "output.kml"
+
+
+# Retrieve MongoDB database
 def getCollection():
     client = pymongo.MongoClient(
         CONN_STR, tls=True, tlsAllowInvalidCertificates=True)
     return client.notification
 
+
+# Helper function for intersect
 def ccw(A, B, C):
     return (C[1]-A[1]) * (B[0]-A[0]) > (B[1]-A[1]) * (C[0]-A[0])
+
 
 # Return true if line segments AB and CD intersect
 def intersect(A, B, C, D):
     return ccw(A, C, D) != ccw(B, C, D) and ccw(A, B, C) != ccw(A, B, D)
 
+
+# Return centroid of all vertices
 def centroid(vertexes):
     _x_list = [vertex[0] for vertex in vertexes]
     _y_list = [vertex[1] for vertex in vertexes]
@@ -56,6 +67,8 @@ def centroid(vertexes):
     _y = sum(_y_list) / _len
     return (_x, _y)
 
+
+# Return true if hexagon intersects with pair of points
 def boolHexagonalLineIntersect(hexagonalCoordinates, p1, p2):
     for i in range(0, len(hexagonalCoordinates) - 1):
         point1 = (hexagonalCoordinates[i][0], hexagonalCoordinates[i][1])
@@ -64,6 +77,8 @@ def boolHexagonalLineIntersect(hexagonalCoordinates, p1, p2):
             return True
     return False
 
+
+# Return true if all hexagon vertices are inside bounding box
 def boolHexagonInsideBoundingBox(hexagonalCoordinates, max_bounds, min_bounds):
     points_out_of_bounds = 0
     for i in range(0, len(hexagonalCoordinates) - 1):
@@ -75,6 +90,61 @@ def boolHexagonInsideBoundingBox(hexagonalCoordinates, max_bounds, min_bounds):
         return False
     return True
 
+
+# Convert geojson overlay and route file to KML
+def geojsonToKML(overlay_file, route_file, kml_file):
+    kml = simplekml.Kml()
+    # Convert overlay
+    with open(overlay_file) as f:
+        data = json.load(f)
+        for feature in data['features']:
+            geom = feature['geometry']
+            geom_type = geom['type']
+            properties = feature['properties']
+            if geom_type == 'Polygon':
+                avoid_class = properties['AVOID_CLASS'] if 'AVOID_CLASS' in properties else ''
+                event = properties['EVENT'] if properties['EVENT'] != None else properties['CLASS']
+                conflicting = properties['conflicting']
+                pol = kml.newpolygon(name=avoid_class,
+                                    description=event,
+                                    outerboundaryis=feature['geometry']['coordinates'][0])
+                if avoid_class == 'NotFlyable.Hospital':
+                    outline = simplekml.Color.yellow
+                elif avoid_class == 'NotFlyable.Tower':
+                    if conflicting:
+                        outline = simplekml.Color.orange
+                    else:
+                        outline = simplekml.Color.saddlebrown
+                elif avoid_class == 'NotFlyable.Airport':
+                    if conflicting:
+                        outline = simplekml.Color.red
+                    else:
+                        outline = simplekml.Color.black
+                else:
+                    outline = simplekml.Color.grey
+                pol.style.linestyle.color = outline
+                pol.style.polystyle.color = simplekml.Color.changealphaint(
+                    50, outline)
+            else:
+                print("ERROR: unknown type:", geom_type)
+    # Convert trajectory file
+    with open(route_file) as f:
+        data = json.load(f)
+        feature = data['features']
+        geom = feature['geometry']
+        geom_type = geom['type']
+        properties = feature['properties']
+        if geom_type == 'LineString':
+            pol = kml.newlinestring(name=properties['event'] if 'event' in properties else '',
+                                    coords=geom['coordinates'])
+            pol.style.linestyle.color = simplekml.Color.darkblue
+        else:
+            print("ERROR: unknown type:", geom_type)
+
+    kml.save(kml_file)
+
+
+# Conflict detection
 def select_all_tasks(policy_sender, db, trajectory_file):
 
     f = open(trajectory_file, "r")
@@ -114,7 +184,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
             "avoid_class": "Trajectory"
         }
     }
-    pois = loads(dumps(db.arizona_static.find()))
+    pois = loads(dumps(db.arizona.find()))
     add_routes = True
     for row in pois:
         if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
@@ -172,6 +242,8 @@ def select_all_tasks(policy_sender, db, trajectory_file):
                         }
                     })
                     conflicts.append(row)
+                    if (row["properties"]["AVOID_CLASS"] == "NotFlyable.Airport" or row["properties"]["AVOID_CLASS"] == "NotFlyable.Tower"):
+                        airport_or_tower_added = True
             # always display airports/airfields/helipads and towers
             elif (row["properties"]["AVOID_CLASS"] == "NotFlyable.Airport" or row["properties"]["AVOID_CLASS"] == "NotFlyable.Tower"):
                 if not airport_or_tower_added:
@@ -203,12 +275,16 @@ def select_all_tasks(policy_sender, db, trajectory_file):
 
     return finalIDarray
 
+
+# Return dump of database
 def get_zones(db):
     with open("phoenix_zones.json", "w") as outfile:
-        outfile.write(dumps(list(db.arizona_static.find()), indent=4))
+        outfile.write(dumps(list(db.arizona.find()), indent=4))
+
 
 # def trajectory_service(sender, row, time):
 #     print(f"{sender}: Trajectory has a conflict with following zone from {time}: \n ==================================== \n {row}")
+
 
 def mainBuildRegion():
     policy_sender = object()
@@ -255,8 +331,10 @@ def mainBuildRegion():
             fig.update_layout(mapbox_zoom=10, mapbox_center_lat=33.37)
             fig.show()
 
+    route_file = args.filename[0][:args.filename[0].index(".")] + ".geojson"
+    geojsonToKML(OUT_FILE, route_file, KML_FILE)
 
-    
+
 if __name__ == "__main__":
     mainBuildRegion()
     

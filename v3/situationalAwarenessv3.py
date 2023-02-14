@@ -39,6 +39,7 @@ CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?r
 OUT_FILE = "conflicts.geojson"
 MAP_FILE = "conflicts_map.geojson"
 KML_FILE = "output.kml"
+DATABASE = "california"
 
 
 # Retrieve MongoDB database
@@ -187,7 +188,13 @@ def select_all_tasks(policy_sender, db, trajectory_file):
             "reference_utc_time": ""
         }
     }
-    pois = loads(dumps(db.arizona.find()))
+    if DATABASE == "arizona":
+        pois = loads(dumps(db.arizona.find()))
+    elif DATABASE == "california":
+        pois = loads(dumps(db.california.find()))
+    else:
+        print("ERROR: database not found")
+        return []
     add_routes = True
     for row in pois:
         if row["properties"]["AVOID_CLASS"][:7] == "Flyable":
@@ -289,8 +296,11 @@ def select_all_tasks(policy_sender, db, trajectory_file):
 
 # Return dump of database
 def get_zones(db):
-    with open("phoenix_zones.json", "w") as outfile:
-        outfile.write(dumps(list(db.arizona.find()), indent=4))
+    with open(f"{DATABASE}_zones.json", "w") as outfile:
+        if DATABASE == "arizona":
+            outfile.write(dumps(list(db.arizona.find()), indent=4))
+        elif DATABASE == "california":
+            outfile.write(dumps(list(db.california.find()), indent=4))
 
 
 # def trajectory_service(sender, row, time):

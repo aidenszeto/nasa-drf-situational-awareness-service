@@ -1,0 +1,2143 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.49707341596212,
+                            38.470114714999994
+                        ],
+                        [
+                            -121.50573366999997,
+                            38.465114715
+                        ],
+                        [
+                            -121.51439392403782,
+                            38.470114714999994
+                        ],
+                        [
+                            -121.51439392403782,
+                            38.480114715
+                        ],
+                        [
+                            -121.50573366999997,
+                            38.485114714999995
+                        ],
+                        [
+                            -121.49707341596212,
+                            38.480114715
+                        ],
+                        [
+                            -121.49707341596212,
+                            38.470114714999994
+                        ],
+                        [
+                            -121.49707341596212,
+                            38.470114714999994
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "167160906",
+                "TYPE": 2952,
+                "CLASS": "water_tower",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Tower",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.45509473596216,
+                            38.56636277
+                        ],
+                        [
+                            -121.46375499000001,
+                            38.56136277
+                        ],
+                        [
+                            -121.47241524403786,
+                            38.56636277
+                        ],
+                        [
+                            -121.47241524403786,
+                            38.57636277
+                        ],
+                        [
+                            -121.46375499000001,
+                            38.58136277
+                        ],
+                        [
+                            -121.45509473596216,
+                            38.57636277
+                        ],
+                        [
+                            -121.45509473596216,
+                            38.56636277
+                        ],
+                        [
+                            -121.45509473596216,
+                            38.56636277
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "233271942",
+                "TYPE": 2952,
+                "CLASS": "water_tower",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Tower",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.43314725859096,
+                            38.54113329333334
+                        ],
+                        [
+                            -121.45046776666665,
+                            38.53113329333333
+                        ],
+                        [
+                            -121.46778827474233,
+                            38.54113329333334
+                        ],
+                        [
+                            -121.46778827474233,
+                            38.561133293333334
+                        ],
+                        [
+                            -121.45046776666665,
+                            38.57113329333334
+                        ],
+                        [
+                            -121.43314725859096,
+                            38.561133293333334
+                        ],
+                        [
+                            -121.43314725859096,
+                            38.54113329333334
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": "University of California, Davis Medical Center",
+                "GUID": "405350101",
+                "TYPE": 2110,
+                "CLASS": "hospital",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Hospital",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.49923668881931,
+                            38.575441757142855
+                        ],
+                        [
+                            -121.50789694285716,
+                            38.57044175714286
+                        ],
+                        [
+                            -121.51655719689501,
+                            38.575441757142855
+                        ],
+                        [
+                            -121.51655719689501,
+                            38.58544175714286
+                        ],
+                        [
+                            -121.50789694285716,
+                            38.590441757142855
+                        ],
+                        [
+                            -121.49923668881931,
+                            38.58544175714286
+                        ],
+                        [
+                            -121.49923668881931,
+                            38.575441757142855
+                        ],
+                        [
+                            -121.49923668881931,
+                            38.575441757142855
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "437915839",
+                "TYPE": 2950,
+                "CLASS": "tower",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Tower",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.49996146596214,
+                            38.575634599999994
+                        ],
+                        [
+                            -121.50862172,
+                            38.5706346
+                        ],
+                        [
+                            -121.51728197403784,
+                            38.575634599999994
+                        ],
+                        [
+                            -121.51728197403784,
+                            38.5856346
+                        ],
+                        [
+                            -121.50862172,
+                            38.590634599999994
+                        ],
+                        [
+                            -121.49996146596214,
+                            38.5856346
+                        ],
+                        [
+                            -121.49996146596214,
+                            38.575634599999994
+                        ],
+                        [
+                            -121.49996146596214,
+                            38.575634599999994
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "437915856",
+                "TYPE": 2950,
+                "CLASS": "tower",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Tower",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.41734299096214,
+                            38.55598263
+                        ],
+                        [
+                            -121.42600324499999,
+                            38.55098263000001
+                        ],
+                        [
+                            -121.43466349903784,
+                            38.55598263
+                        ],
+                        [
+                            -121.43466349903784,
+                            38.56598263000001
+                        ],
+                        [
+                            -121.42600324499999,
+                            38.57098263
+                        ],
+                        [
+                            -121.41734299096214,
+                            38.56598263000001
+                        ],
+                        [
+                            -121.41734299096214,
+                            38.55598263
+                        ],
+                        [
+                            -121.41734299096214,
+                            38.55598263
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "544166693",
+                "TYPE": 2952,
+                "CLASS": "water_tower",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Tower",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.4132297334622,
+                            38.46464373999999
+                        ],
+                        [
+                            -121.42188998750005,
+                            38.45964374
+                        ],
+                        [
+                            -121.4305502415379,
+                            38.46464373999999
+                        ],
+                        [
+                            -121.4305502415379,
+                            38.47464374
+                        ],
+                        [
+                            -121.42188998750005,
+                            38.47964373999999
+                        ],
+                        [
+                            -121.4132297334622,
+                            38.47464374
+                        ],
+                        [
+                            -121.4132297334622,
+                            38.46464373999999
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": "Kaiser Permanente South Sacramento Medical Center",
+                "GUID": "578100530",
+                "TYPE": 2110,
+                "CLASS": "hospital",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Hospital",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.40810346134677,
+                            38.458099815384614
+                        ],
+                        [
+                            -121.41676371538462,
+                            38.45309981538462
+                        ],
+                        [
+                            -121.42542396942247,
+                            38.458099815384614
+                        ],
+                        [
+                            -121.42542396942247,
+                            38.46809981538462
+                        ],
+                        [
+                            -121.41676371538462,
+                            38.473099815384614
+                        ],
+                        [
+                            -121.40810346134677,
+                            38.46809981538462
+                        ],
+                        [
+                            -121.40810346134677,
+                            38.458099815384614
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": "Methodist Hospital of Sacramento",
+                "GUID": "578107842",
+                "TYPE": 2110,
+                "CLASS": "hospital",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Hospital",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.43265092596215,
+                            38.53493519999999
+                        ],
+                        [
+                            -121.44131118,
+                            38.5299352
+                        ],
+                        [
+                            -121.44997143403785,
+                            38.53493519999999
+                        ],
+                        [
+                            -121.44997143403785,
+                            38.5449352
+                        ],
+                        [
+                            -121.44131118,
+                            38.54993519999999
+                        ],
+                        [
+                            -121.43265092596215,
+                            38.5449352
+                        ],
+                        [
+                            -121.43265092596215,
+                            38.53493519999999
+                        ],
+                        [
+                            -121.43265092596215,
+                            38.53493519999999
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "617101171",
+                "TYPE": 2950,
+                "CLASS": "tower",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Tower",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.43265092596215,
+                            38.53493519999999
+                        ],
+                        [
+                            -121.44131118,
+                            38.5299352
+                        ],
+                        [
+                            -121.44997143403785,
+                            38.53493519999999
+                        ],
+                        [
+                            -121.44997143403785,
+                            38.5449352
+                        ],
+                        [
+                            -121.44131118,
+                            38.54993519999999
+                        ],
+                        [
+                            -121.43265092596215,
+                            38.5449352
+                        ],
+                        [
+                            -121.43265092596215,
+                            38.53493519999999
+                        ],
+                        [
+                            -121.43265092596215,
+                            38.53493519999999
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "617101171",
+                "TYPE": 2950,
+                "CLASS": "tower",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Tower",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.40589530596216,
+                            38.456997640000004
+                        ],
+                        [
+                            -121.41455556000001,
+                            38.45199764000001
+                        ],
+                        [
+                            -121.42321581403786,
+                            38.456997640000004
+                        ],
+                        [
+                            -121.42321581403786,
+                            38.46699764000001
+                        ],
+                        [
+                            -121.41455556000001,
+                            38.471997640000005
+                        ],
+                        [
+                            -121.40589530596216,
+                            38.46699764000001
+                        ],
+                        [
+                            -121.40589530596216,
+                            38.456997640000004
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": "Endoscopy Center of South Sacramento",
+                "GUID": "692733305",
+                "TYPE": 2110,
+                "CLASS": "hospital",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Hospital",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.36282451082702,
+                            38.379561899999985
+                        ],
+                        [
+                            -121.37148476486487,
+                            38.37456189999999
+                        ],
+                        [
+                            -121.38014501890272,
+                            38.379561899999985
+                        ],
+                        [
+                            -121.38014501890272,
+                            38.38956189999999
+                        ],
+                        [
+                            -121.37148476486487,
+                            38.394561899999985
+                        ],
+                        [
+                            -121.36282451082702,
+                            38.38956189999999
+                        ],
+                        [
+                            -121.36282451082702,
+                            38.379561899999985
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": "Kaiser Permanente Medical Offices",
+                "GUID": "826590701",
+                "TYPE": 2110,
+                "CLASS": "hospital",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Hospital",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.42822071739073,
+                            38.5856259
+                        ],
+                        [
+                            -121.43688097142858,
+                            38.5806259
+                        ],
+                        [
+                            -121.44554122546643,
+                            38.5856259
+                        ],
+                        [
+                            -121.44554122546643,
+                            38.5956259
+                        ],
+                        [
+                            -121.43688097142858,
+                            38.6006259
+                        ],
+                        [
+                            -121.42822071739073,
+                            38.5956259
+                        ],
+                        [
+                            -121.42822071739073,
+                            38.5856259
+                        ],
+                        [
+                            -121.42822071739073,
+                            38.5856259
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "865770786",
+                "TYPE": 2950,
+                "CLASS": "tower",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Tower",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.42703033346216,
+                            38.58586575
+                        ],
+                        [
+                            -121.4356905875,
+                            38.58086575000001
+                        ],
+                        [
+                            -121.44435084153785,
+                            38.58586575
+                        ],
+                        [
+                            -121.44435084153785,
+                            38.59586575000001
+                        ],
+                        [
+                            -121.4356905875,
+                            38.600865750000004
+                        ],
+                        [
+                            -121.42703033346216,
+                            38.59586575000001
+                        ],
+                        [
+                            -121.42703033346216,
+                            38.58586575
+                        ],
+                        [
+                            -121.42703033346216,
+                            38.58586575
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "865770804",
+                "TYPE": 2950,
+                "CLASS": "tower",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Tower",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.40876043485105,
+                            38.46218372222222
+                        ],
+                        [
+                            -121.4174206888889,
+                            38.457183722222226
+                        ],
+                        [
+                            -121.42608094292675,
+                            38.46218372222222
+                        ],
+                        [
+                            -121.42608094292675,
+                            38.472183722222226
+                        ],
+                        [
+                            -121.4174206888889,
+                            38.47718372222222
+                        ],
+                        [
+                            -121.40876043485105,
+                            38.472183722222226
+                        ],
+                        [
+                            -121.40876043485105,
+                            38.46218372222222
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": "Sierra Vista Hospital",
+                "GUID": "931241904",
+                "TYPE": 2110,
+                "CLASS": "hospital",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Hospital",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.58236116262881,
+                            38.6856143
+                        ],
+                        [
+                            -121.59102141666666,
+                            38.6806143
+                        ],
+                        [
+                            -121.59968167070451,
+                            38.6856143
+                        ],
+                        [
+                            -121.59968167070451,
+                            38.6956143
+                        ],
+                        [
+                            -121.59102141666666,
+                            38.7006143
+                        ],
+                        [
+                            -121.58236116262881,
+                            38.6956143
+                        ],
+                        [
+                            -121.58236116262881,
+                            38.6856143
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": "Sacramento Control Tower",
+                "GUID": "940722021",
+                "TYPE": 2953,
+                "CLASS": "observation_tower",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Tower",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.56591018384863,
+                            38.67093978124999
+                        ],
+                        [
+                            -121.60055120000001,
+                            38.650939781249996
+                        ],
+                        [
+                            -121.6351922161514,
+                            38.67093978124999
+                        ],
+                        [
+                            -121.6351922161514,
+                            38.71093978125
+                        ],
+                        [
+                            -121.60055120000001,
+                            38.730939781249994
+                        ],
+                        [
+                            -121.56591018384863,
+                            38.71093978125
+                        ],
+                        [
+                            -121.56591018384863,
+                            38.67093978124999
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": "Sacramento International Airport",
+                "GUID": "25076347",
+                "TYPE": 5651,
+                "CLASS": "airport",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.49848737929548,
+                            38.43727592916666
+                        ],
+                        [
+                            -121.50714763333333,
+                            38.432275929166664
+                        ],
+                        [
+                            -121.51580788737118,
+                            38.43727592916666
+                        ],
+                        [
+                            -121.51580788737118,
+                            38.447275929166665
+                        ],
+                        [
+                            -121.50714763333333,
+                            38.45227592916666
+                        ],
+                        [
+                            -121.49848737929548,
+                            38.447275929166665
+                        ],
+                        [
+                            -121.49848737929548,
+                            38.43727592916666
+                        ],
+                        [
+                            -121.49848737929548,
+                            38.43727592916666
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": "Borges-Clarksburg Airport",
+                "GUID": "37265406",
+                "TYPE": 5651,
+                "CLASS": "airport",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.49044472929549,
+                            38.50531466666666
+                        ],
+                        [
+                            -121.49910498333334,
+                            38.50031466666667
+                        ],
+                        [
+                            -121.50776523737119,
+                            38.50531466666666
+                        ],
+                        [
+                            -121.50776523737119,
+                            38.51531466666667
+                        ],
+                        [
+                            -121.49910498333334,
+                            38.520314666666664
+                        ],
+                        [
+                            -121.49044472929549,
+                            38.51531466666667
+                        ],
+                        [
+                            -121.49044472929549,
+                            38.50531466666666
+                        ],
+                        [
+                            -121.49044472929549,
+                            38.50531466666666
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "131443016",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.47578135074785,
+                            38.502822755882356
+                        ],
+                        [
+                            -121.49310185882354,
+                            38.49282275588235
+                        ],
+                        [
+                            -121.51042236689922,
+                            38.502822755882356
+                        ],
+                        [
+                            -121.51042236689922,
+                            38.52282275588235
+                        ],
+                        [
+                            -121.49310185882354,
+                            38.53282275588236
+                        ],
+                        [
+                            -121.47578135074785,
+                            38.52282275588235
+                        ],
+                        [
+                            -121.47578135074785,
+                            38.502822755882356
+                        ],
+                        [
+                            -121.47578135074785,
+                            38.502822755882356
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": "Sacramento Executive Airport",
+                "GUID": "172595067",
+                "TYPE": 5651,
+                "CLASS": "airport",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.36945406350962,
+                            38.643329594915244
+                        ],
+                        [
+                            -121.404095079661,
+                            38.62332959491525
+                        ],
+                        [
+                            -121.43873609581239,
+                            38.643329594915244
+                        ],
+                        [
+                            -121.43873609581239,
+                            38.68332959491525
+                        ],
+                        [
+                            -121.404095079661,
+                            38.703329594915246
+                        ],
+                        [
+                            -121.36945406350962,
+                            38.68332959491525
+                        ],
+                        [
+                            -121.36945406350962,
+                            38.643329594915244
+                        ],
+                        [
+                            -121.36945406350962,
+                            38.643329594915244
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": "McClellan Airfield",
+                "GUID": "285105661",
+                "TYPE": 5651,
+                "CLASS": "airport",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.46099436596215,
+                            38.56554773999999
+                        ],
+                        [
+                            -121.46965462,
+                            38.56054774
+                        ],
+                        [
+                            -121.47831487403785,
+                            38.56554773999999
+                        ],
+                        [
+                            -121.47831487403785,
+                            38.57554774
+                        ],
+                        [
+                            -121.46965462,
+                            38.58054773999999
+                        ],
+                        [
+                            -121.46099436596215,
+                            38.57554774
+                        ],
+                        [
+                            -121.46099436596215,
+                            38.56554773999999
+                        ],
+                        [
+                            -121.46099436596215,
+                            38.56554773999999
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "852273418",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.44653264596215,
+                            38.549844119999996
+                        ],
+                        [
+                            -121.4551929,
+                            38.54484412
+                        ],
+                        [
+                            -121.46385315403785,
+                            38.549844119999996
+                        ],
+                        [
+                            -121.46385315403785,
+                            38.55984412
+                        ],
+                        [
+                            -121.4551929,
+                            38.56484412
+                        ],
+                        [
+                            -121.44653264596215,
+                            38.55984412
+                        ],
+                        [
+                            -121.44653264596215,
+                            38.549844119999996
+                        ],
+                        [
+                            -121.44653264596215,
+                            38.549844119999996
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "852273806",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.44676080596216,
+                            38.54988068
+                        ],
+                        [
+                            -121.45542106,
+                            38.544880680000006
+                        ],
+                        [
+                            -121.46408131403786,
+                            38.54988068
+                        ],
+                        [
+                            -121.46408131403786,
+                            38.559880680000006
+                        ],
+                        [
+                            -121.45542106,
+                            38.56488068
+                        ],
+                        [
+                            -121.44676080596216,
+                            38.559880680000006
+                        ],
+                        [
+                            -121.44676080596216,
+                            38.54988068
+                        ],
+                        [
+                            -121.44676080596216,
+                            38.54988068
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "852273807",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.47961016596216,
+                            38.59309948
+                        ],
+                        [
+                            -121.48827042,
+                            38.588099480000004
+                        ],
+                        [
+                            -121.49693067403786,
+                            38.59309948
+                        ],
+                        [
+                            -121.49693067403786,
+                            38.603099480000004
+                        ],
+                        [
+                            -121.48827042,
+                            38.60809948
+                        ],
+                        [
+                            -121.47961016596216,
+                            38.603099480000004
+                        ],
+                        [
+                            -121.47961016596216,
+                            38.59309948
+                        ],
+                        [
+                            -121.47961016596216,
+                            38.59309948
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": "California Highway Patrol Headquarters Heliport",
+                "GUID": "888038120",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.39388592596217,
+                            38.647562779999994
+                        ],
+                        [
+                            -121.40254618000002,
+                            38.64256278
+                        ],
+                        [
+                            -121.41120643403787,
+                            38.647562779999994
+                        ],
+                        [
+                            -121.41120643403787,
+                            38.65756278
+                        ],
+                        [
+                            -121.40254618000002,
+                            38.662562779999995
+                        ],
+                        [
+                            -121.39388592596217,
+                            38.65756278
+                        ],
+                        [
+                            -121.39388592596217,
+                            38.647562779999994
+                        ],
+                        [
+                            -121.39388592596217,
+                            38.647562779999994
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "1124608538",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.38851734596214,
+                            38.65804978
+                        ],
+                        [
+                            -121.39717759999999,
+                            38.65304978
+                        ],
+                        [
+                            -121.40583785403784,
+                            38.65804978
+                        ],
+                        [
+                            -121.40583785403784,
+                            38.668049780000004
+                        ],
+                        [
+                            -121.39717759999999,
+                            38.67304978
+                        ],
+                        [
+                            -121.38851734596214,
+                            38.668049780000004
+                        ],
+                        [
+                            -121.38851734596214,
+                            38.65804978
+                        ],
+                        [
+                            -121.38851734596214,
+                            38.65804978
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "1124608549",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.38790188096215,
+                            38.660947715
+                        ],
+                        [
+                            -121.396562135,
+                            38.655947715
+                        ],
+                        [
+                            -121.40522238903785,
+                            38.660947715
+                        ],
+                        [
+                            -121.40522238903785,
+                            38.670947715000004
+                        ],
+                        [
+                            -121.396562135,
+                            38.675947715
+                        ],
+                        [
+                            -121.38790188096215,
+                            38.670947715000004
+                        ],
+                        [
+                            -121.38790188096215,
+                            38.660947715
+                        ],
+                        [
+                            -121.38790188096215,
+                            38.660947715
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "1124608587",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.38753796096213,
+                            38.660945845
+                        ],
+                        [
+                            -121.39619821499998,
+                            38.655945845000005
+                        ],
+                        [
+                            -121.40485846903783,
+                            38.660945845
+                        ],
+                        [
+                            -121.40485846903783,
+                            38.670945845000006
+                        ],
+                        [
+                            -121.39619821499998,
+                            38.675945845
+                        ],
+                        [
+                            -121.38753796096213,
+                            38.670945845000006
+                        ],
+                        [
+                            -121.38753796096213,
+                            38.660945845
+                        ],
+                        [
+                            -121.38753796096213,
+                            38.660945845
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "1124608588",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.38680037929547,
+                            38.660951580952386
+                        ],
+                        [
+                            -121.39546063333331,
+                            38.65595158095239
+                        ],
+                        [
+                            -121.40412088737116,
+                            38.660951580952386
+                        ],
+                        [
+                            -121.40412088737116,
+                            38.67095158095239
+                        ],
+                        [
+                            -121.39546063333331,
+                            38.675951580952386
+                        ],
+                        [
+                            -121.38680037929547,
+                            38.67095158095239
+                        ],
+                        [
+                            -121.38680037929547,
+                            38.660951580952386
+                        ],
+                        [
+                            -121.38680037929547,
+                            38.660951580952386
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "1124608589",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.38716790310501,
+                            38.660950404761905
+                        ],
+                        [
+                            -121.39582815714286,
+                            38.65595040476191
+                        ],
+                        [
+                            -121.40448841118071,
+                            38.660950404761905
+                        ],
+                        [
+                            -121.40448841118071,
+                            38.67095040476191
+                        ],
+                        [
+                            -121.39582815714286,
+                            38.675950404761906
+                        ],
+                        [
+                            -121.38716790310501,
+                            38.67095040476191
+                        ],
+                        [
+                            -121.38716790310501,
+                            38.660950404761905
+                        ],
+                        [
+                            -121.38716790310501,
+                            38.660950404761905
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "1124608592",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.39571334596216,
+                            38.6578776
+                        ],
+                        [
+                            -121.40437360000001,
+                            38.652877600000004
+                        ],
+                        [
+                            -121.41303385403786,
+                            38.6578776
+                        ],
+                        [
+                            -121.41303385403786,
+                            38.667877600000004
+                        ],
+                        [
+                            -121.40437360000001,
+                            38.6728776
+                        ],
+                        [
+                            -121.39571334596216,
+                            38.667877600000004
+                        ],
+                        [
+                            -121.39571334596216,
+                            38.6578776
+                        ],
+                        [
+                            -121.39571334596216,
+                            38.6578776
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "1124608625",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.39076774596214,
+                            38.66419902
+                        ],
+                        [
+                            -121.39942799999999,
+                            38.65919902
+                        ],
+                        [
+                            -121.40808825403784,
+                            38.66419902
+                        ],
+                        [
+                            -121.40808825403784,
+                            38.67419902
+                        ],
+                        [
+                            -121.39942799999999,
+                            38.67919902
+                        ],
+                        [
+                            -121.39076774596214,
+                            38.67419902
+                        ],
+                        [
+                            -121.39076774596214,
+                            38.66419902
+                        ],
+                        [
+                            -121.39076774596214,
+                            38.66419902
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "1124608627",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.40150936096217,
+                            38.650061775
+                        ],
+                        [
+                            -121.41016961500002,
+                            38.645061775
+                        ],
+                        [
+                            -121.41882986903786,
+                            38.650061775
+                        ],
+                        [
+                            -121.41882986903786,
+                            38.660061775
+                        ],
+                        [
+                            -121.41016961500002,
+                            38.665061775
+                        ],
+                        [
+                            -121.40150936096217,
+                            38.660061775
+                        ],
+                        [
+                            -121.40150936096217,
+                            38.650061775
+                        ],
+                        [
+                            -121.40150936096217,
+                            38.650061775
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "1124608667",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.38643530596218,
+                            38.660945605
+                        ],
+                        [
+                            -121.39509556000003,
+                            38.65594560500001
+                        ],
+                        [
+                            -121.40375581403788,
+                            38.660945605
+                        ],
+                        [
+                            -121.40375581403788,
+                            38.67094560500001
+                        ],
+                        [
+                            -121.39509556000003,
+                            38.675945605
+                        ],
+                        [
+                            -121.38643530596218,
+                            38.67094560500001
+                        ],
+                        [
+                            -121.38643530596218,
+                            38.660945605
+                        ],
+                        [
+                            -121.38643530596218,
+                            38.660945605
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "EVENT": null,
+                "GUID": "1124611002",
+                "TYPE": 5655,
+                "CLASS": "helipad",
+                "AVOID_START_TIME": {
+                    "$date": {
+                        "$numberLong": "-62135596800000"
+                    }
+                },
+                "AVOID_END_TIME": {
+                    "$date": "9999-12-31T23:59:59.999Z"
+                },
+                "ALWAYS_AVOID": 0,
+                "AVOID_CLASS": "NotFlyable.Airport",
+                "stroke": "#ffaa00",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "conflicting": false
+            }
+        }
+    ]
+}

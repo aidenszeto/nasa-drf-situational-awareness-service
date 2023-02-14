@@ -1,0 +1,61 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.608975,
+                        38.701132
+                    ],
+                    [
+                        -121.511129,
+                        38.677485
+                    ],
+                    [
+                        -121.456883,
+                        38.631536
+                    ],
+                    [
+                        -121.445421,
+                        38.583167
+                    ],
+                    [
+                        -121.437775,
+                        38.544729
+                    ],
+                    [
+                        -121.429879,
+                        38.509457
+                    ],
+                    [
+                        -121.420202,
+                        38.44465
+                    ],
+                    [
+                        -121.386325,
+                        38.419507
+                    ],
+                    [
+                        -121.372831,
+                        38.365802
+                    ],
+                    [
+                        -121.362892,
+                        38.334846
+                    ]
+                ]
+            },
+            "properties": {
+                "event": "Trajectory",
+                "fclass": "Trajectory",
+                "avoid_class": "Trajectory",
+                "request_id": [],
+                "request_label": [],
+                "reference_utc_time": ""
+            }
+        }
+    ]
+}

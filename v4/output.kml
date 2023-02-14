@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <Style id="6">
+            <LineStyle id="7">
+                <color>ff13458b</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="8">
+                <color>3213458b</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="13">
+            <LineStyle id="14">
+                <color>ff13458b</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="15">
+                <color>3213458b</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="20">
+            <LineStyle id="21">
+                <color>ff00ffff</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="22">
+                <color>3200ffff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="27">
+            <LineStyle id="28">
+                <color>ff13458b</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="29">
+                <color>3213458b</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="34">
+            <LineStyle id="35">
+                <color>ff13458b</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="36">
+                <color>3213458b</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="41">
+            <LineStyle id="42">
+                <color>ff13458b</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="43">
+                <color>3213458b</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="48">
+            <LineStyle id="49">
+                <color>ff00ffff</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="50">
+                <color>3200ffff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="55">
+            <LineStyle id="56">
+                <color>ff00ffff</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="57">
+                <color>3200ffff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="62">
+            <LineStyle id="63">
+                <color>ff00a5ff</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="64">
+                <color>3200a5ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="69">
+            <LineStyle id="70">
+                <color>ff00a5ff</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="71">
+                <color>3200a5ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="76">
+            <LineStyle id="77">
+                <color>ff00ffff</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="78">
+                <color>3200ffff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="83">
+            <LineStyle id="84">
+                <color>ff00ffff</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="85">
+                <color>3200ffff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="90">
+            <LineStyle id="91">
+                <color>ff13458b</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="92">
+                <color>3213458b</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="97">
+            <LineStyle id="98">
+                <color>ff13458b</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="99">
+                <color>3213458b</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="104">
+            <LineStyle id="105">
+                <color>ff00ffff</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="106">
+                <color>3200ffff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="111">
+            <LineStyle id="112">
+                <color>ff00a5ff</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="113">
+                <color>3200a5ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="118">
+            <LineStyle id="119">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="120">
+                <color>320000ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="125">
+            <LineStyle id="126">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="127">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="132">
+            <LineStyle id="133">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="134">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="139">
+            <LineStyle id="140">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="141">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="146">
+            <LineStyle id="147">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="148">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="153">
+            <LineStyle id="154">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="155">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="160">
+            <LineStyle id="161">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="162">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="167">
+            <LineStyle id="168">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="169">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="174">
+            <LineStyle id="175">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="176">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="181">
+            <LineStyle id="182">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="183">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="188">
+            <LineStyle id="189">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="190">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="195">
+            <LineStyle id="196">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="197">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="202">
+            <LineStyle id="203">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="204">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="209">
+            <LineStyle id="210">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="211">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="216">
+            <LineStyle id="217">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="218">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="223">
+            <LineStyle id="224">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="225">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="230">
+            <LineStyle id="231">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="232">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="237">
+            <LineStyle id="238">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="239">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="244">
+            <LineStyle id="245">
+                <color>ff000000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+            <PolyStyle id="246">
+                <color>32000000</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>1</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="249">
+            <LineStyle id="250">
+                <color>ff8b0000</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+        </Style>
+        <Placemark id="3">
+            <name>NotFlyable.Tower</name>
+            <description>water_tower</description>
+            <styleUrl>#6</styleUrl>
+            <Polygon id="2">
+                <outerBoundaryIs>
+                    <LinearRing id="4">
+                        <coordinates>-121.49707341596212,38.470114714999994,0.0 -121.50573366999997,38.465114715,0.0 -121.51439392403782,38.470114714999994,0.0 -121.51439392403782,38.480114715,0.0 -121.50573366999997,38.485114714999995,0.0 -121.49707341596212,38.480114715,0.0 -121.49707341596212,38.470114714999994,0.0 -121.49707341596212,38.470114714999994,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="10">
+            <name>NotFlyable.Tower</name>
+            <description>water_tower</description>
+            <styleUrl>#13</styleUrl>
+            <Polygon id="9">
+                <outerBoundaryIs>
+                    <LinearRing id="11">
+                        <coordinates>-121.45509473596216,38.56636277,0.0 -121.46375499000001,38.56136277,0.0 -121.47241524403786,38.56636277,0.0 -121.47241524403786,38.57636277,0.0 -121.46375499000001,38.58136277,0.0 -121.45509473596216,38.57636277,0.0 -121.45509473596216,38.56636277,0.0 -121.45509473596216,38.56636277,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="17">
+            <name>NotFlyable.Hospital</name>
+            <description>University of California, Davis Medical Center</description>
+            <styleUrl>#20</styleUrl>
+            <Polygon id="16">
+                <outerBoundaryIs>
+                    <LinearRing id="18">
+                        <coordinates>-121.43314725859096,38.54113329333334,0.0 -121.45046776666665,38.53113329333333,0.0 -121.46778827474233,38.54113329333334,0.0 -121.46778827474233,38.561133293333334,0.0 -121.45046776666665,38.57113329333334,0.0 -121.43314725859096,38.561133293333334,0.0 -121.43314725859096,38.54113329333334,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="24">
+            <name>NotFlyable.Tower</name>
+            <description>tower</description>
+            <styleUrl>#27</styleUrl>
+            <Polygon id="23">
+                <outerBoundaryIs>
+                    <LinearRing id="25">
+                        <coordinates>-121.49923668881931,38.575441757142855,0.0 -121.50789694285716,38.57044175714286,0.0 -121.51655719689501,38.575441757142855,0.0 -121.51655719689501,38.58544175714286,0.0 -121.50789694285716,38.590441757142855,0.0 -121.49923668881931,38.58544175714286,0.0 -121.49923668881931,38.575441757142855,0.0 -121.49923668881931,38.575441757142855,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="31">
+            <name>NotFlyable.Tower</name>
+            <description>tower</description>
+            <styleUrl>#34</styleUrl>
+            <Polygon id="30">
+                <outerBoundaryIs>
+                    <LinearRing id="32">
+                        <coordinates>-121.49996146596214,38.575634599999994,0.0 -121.50862172,38.5706346,0.0 -121.51728197403784,38.575634599999994,0.0 -121.51728197403784,38.5856346,0.0 -121.50862172,38.590634599999994,0.0 -121.49996146596214,38.5856346,0.0 -121.49996146596214,38.575634599999994,0.0 -121.49996146596214,38.575634599999994,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="38">
+            <name>NotFlyable.Tower</name>
+            <description>water_tower</description>
+            <styleUrl>#41</styleUrl>
+            <Polygon id="37">
+                <outerBoundaryIs>
+                    <LinearRing id="39">
+                        <coordinates>-121.41734299096214,38.55598263,0.0 -121.42600324499999,38.55098263000001,0.0 -121.43466349903784,38.55598263,0.0 -121.43466349903784,38.56598263000001,0.0 -121.42600324499999,38.57098263,0.0 -121.41734299096214,38.56598263000001,0.0 -121.41734299096214,38.55598263,0.0 -121.41734299096214,38.55598263,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="45">
+            <name>NotFlyable.Hospital</name>
+            <description>Kaiser Permanente South Sacramento Medical Center</description>
+            <styleUrl>#48</styleUrl>
+            <Polygon id="44">
+                <outerBoundaryIs>
+                    <LinearRing id="46">
+                        <coordinates>-121.4132297334622,38.46464373999999,0.0 -121.42188998750005,38.45964374,0.0 -121.4305502415379,38.46464373999999,0.0 -121.4305502415379,38.47464374,0.0 -121.42188998750005,38.47964373999999,0.0 -121.4132297334622,38.47464374,0.0 -121.4132297334622,38.46464373999999,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="52">
+            <name>NotFlyable.Hospital</name>
+            <description>Methodist Hospital of Sacramento</description>
+            <styleUrl>#55</styleUrl>
+            <Polygon id="51">
+                <outerBoundaryIs>
+                    <LinearRing id="53">
+                        <coordinates>-121.40810346134677,38.458099815384614,0.0 -121.41676371538462,38.45309981538462,0.0 -121.42542396942247,38.458099815384614,0.0 -121.42542396942247,38.46809981538462,0.0 -121.41676371538462,38.473099815384614,0.0 -121.40810346134677,38.46809981538462,0.0 -121.40810346134677,38.458099815384614,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="59">
+            <name>NotFlyable.Tower</name>
+            <description>tower</description>
+            <styleUrl>#62</styleUrl>
+            <Polygon id="58">
+                <outerBoundaryIs>
+                    <LinearRing id="60">
+                        <coordinates>-121.43265092596215,38.53493519999999,0.0 -121.44131118,38.5299352,0.0 -121.44997143403785,38.53493519999999,0.0 -121.44997143403785,38.5449352,0.0 -121.44131118,38.54993519999999,0.0 -121.43265092596215,38.5449352,0.0 -121.43265092596215,38.53493519999999,0.0 -121.43265092596215,38.53493519999999,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="66">
+            <name>NotFlyable.Tower</name>
+            <description>tower</description>
+            <styleUrl>#69</styleUrl>
+            <Polygon id="65">
+                <outerBoundaryIs>
+                    <LinearRing id="67">
+                        <coordinates>-121.43265092596215,38.53493519999999,0.0 -121.44131118,38.5299352,0.0 -121.44997143403785,38.53493519999999,0.0 -121.44997143403785,38.5449352,0.0 -121.44131118,38.54993519999999,0.0 -121.43265092596215,38.5449352,0.0 -121.43265092596215,38.53493519999999,0.0 -121.43265092596215,38.53493519999999,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="73">
+            <name>NotFlyable.Hospital</name>
+            <description>Endoscopy Center of South Sacramento</description>
+            <styleUrl>#76</styleUrl>
+            <Polygon id="72">
+                <outerBoundaryIs>
+                    <LinearRing id="74">
+                        <coordinates>-121.40589530596216,38.456997640000004,0.0 -121.41455556000001,38.45199764000001,0.0 -121.42321581403786,38.456997640000004,0.0 -121.42321581403786,38.46699764000001,0.0 -121.41455556000001,38.471997640000005,0.0 -121.40589530596216,38.46699764000001,0.0 -121.40589530596216,38.456997640000004,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="80">
+            <name>NotFlyable.Hospital</name>
+            <description>Kaiser Permanente Medical Offices</description>
+            <styleUrl>#83</styleUrl>
+            <Polygon id="79">
+                <outerBoundaryIs>
+                    <LinearRing id="81">
+                        <coordinates>-121.36282451082702,38.379561899999985,0.0 -121.37148476486487,38.37456189999999,0.0 -121.38014501890272,38.379561899999985,0.0 -121.38014501890272,38.38956189999999,0.0 -121.37148476486487,38.394561899999985,0.0 -121.36282451082702,38.38956189999999,0.0 -121.36282451082702,38.379561899999985,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="87">
+            <name>NotFlyable.Tower</name>
+            <description>tower</description>
+            <styleUrl>#90</styleUrl>
+            <Polygon id="86">
+                <outerBoundaryIs>
+                    <LinearRing id="88">
+                        <coordinates>-121.42822071739073,38.5856259,0.0 -121.43688097142858,38.5806259,0.0 -121.44554122546643,38.5856259,0.0 -121.44554122546643,38.5956259,0.0 -121.43688097142858,38.6006259,0.0 -121.42822071739073,38.5956259,0.0 -121.42822071739073,38.5856259,0.0 -121.42822071739073,38.5856259,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="94">
+            <name>NotFlyable.Tower</name>
+            <description>tower</description>
+            <styleUrl>#97</styleUrl>
+            <Polygon id="93">
+                <outerBoundaryIs>
+                    <LinearRing id="95">
+                        <coordinates>-121.42703033346216,38.58586575,0.0 -121.4356905875,38.58086575000001,0.0 -121.44435084153785,38.58586575,0.0 -121.44435084153785,38.59586575000001,0.0 -121.4356905875,38.600865750000004,0.0 -121.42703033346216,38.59586575000001,0.0 -121.42703033346216,38.58586575,0.0 -121.42703033346216,38.58586575,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="101">
+            <name>NotFlyable.Hospital</name>
+            <description>Sierra Vista Hospital</description>
+            <styleUrl>#104</styleUrl>
+            <Polygon id="100">
+                <outerBoundaryIs>
+                    <LinearRing id="102">
+                        <coordinates>-121.40876043485105,38.46218372222222,0.0 -121.4174206888889,38.457183722222226,0.0 -121.42608094292675,38.46218372222222,0.0 -121.42608094292675,38.472183722222226,0.0 -121.4174206888889,38.47718372222222,0.0 -121.40876043485105,38.472183722222226,0.0 -121.40876043485105,38.46218372222222,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="108">
+            <name>NotFlyable.Tower</name>
+            <description>Sacramento Control Tower</description>
+            <styleUrl>#111</styleUrl>
+            <Polygon id="107">
+                <outerBoundaryIs>
+                    <LinearRing id="109">
+                        <coordinates>-121.58236116262881,38.6856143,0.0 -121.59102141666666,38.6806143,0.0 -121.59968167070451,38.6856143,0.0 -121.59968167070451,38.6956143,0.0 -121.59102141666666,38.7006143,0.0 -121.58236116262881,38.6956143,0.0 -121.58236116262881,38.6856143,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="115">
+            <name>NotFlyable.Airport</name>
+            <description>Sacramento International Airport</description>
+            <styleUrl>#118</styleUrl>
+            <Polygon id="114">
+                <outerBoundaryIs>
+                    <LinearRing id="116">
+                        <coordinates>-121.56591018384863,38.67093978124999,0.0 -121.60055120000001,38.650939781249996,0.0 -121.6351922161514,38.67093978124999,0.0 -121.6351922161514,38.71093978125,0.0 -121.60055120000001,38.730939781249994,0.0 -121.56591018384863,38.71093978125,0.0 -121.56591018384863,38.67093978124999,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="122">
+            <name>NotFlyable.Airport</name>
+            <description>Borges-Clarksburg Airport</description>
+            <styleUrl>#125</styleUrl>
+            <Polygon id="121">
+                <outerBoundaryIs>
+                    <LinearRing id="123">
+                        <coordinates>-121.49848737929548,38.43727592916666,0.0 -121.50714763333333,38.432275929166664,0.0 -121.51580788737118,38.43727592916666,0.0 -121.51580788737118,38.447275929166665,0.0 -121.50714763333333,38.45227592916666,0.0 -121.49848737929548,38.447275929166665,0.0 -121.49848737929548,38.43727592916666,0.0 -121.49848737929548,38.43727592916666,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="129">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#132</styleUrl>
+            <Polygon id="128">
+                <outerBoundaryIs>
+                    <LinearRing id="130">
+                        <coordinates>-121.49044472929549,38.50531466666666,0.0 -121.49910498333334,38.50031466666667,0.0 -121.50776523737119,38.50531466666666,0.0 -121.50776523737119,38.51531466666667,0.0 -121.49910498333334,38.520314666666664,0.0 -121.49044472929549,38.51531466666667,0.0 -121.49044472929549,38.50531466666666,0.0 -121.49044472929549,38.50531466666666,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="136">
+            <name>NotFlyable.Airport</name>
+            <description>Sacramento Executive Airport</description>
+            <styleUrl>#139</styleUrl>
+            <Polygon id="135">
+                <outerBoundaryIs>
+                    <LinearRing id="137">
+                        <coordinates>-121.47578135074785,38.502822755882356,0.0 -121.49310185882354,38.49282275588235,0.0 -121.51042236689922,38.502822755882356,0.0 -121.51042236689922,38.52282275588235,0.0 -121.49310185882354,38.53282275588236,0.0 -121.47578135074785,38.52282275588235,0.0 -121.47578135074785,38.502822755882356,0.0 -121.47578135074785,38.502822755882356,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="143">
+            <name>NotFlyable.Airport</name>
+            <description>McClellan Airfield</description>
+            <styleUrl>#146</styleUrl>
+            <Polygon id="142">
+                <outerBoundaryIs>
+                    <LinearRing id="144">
+                        <coordinates>-121.36945406350962,38.643329594915244,0.0 -121.404095079661,38.62332959491525,0.0 -121.43873609581239,38.643329594915244,0.0 -121.43873609581239,38.68332959491525,0.0 -121.404095079661,38.703329594915246,0.0 -121.36945406350962,38.68332959491525,0.0 -121.36945406350962,38.643329594915244,0.0 -121.36945406350962,38.643329594915244,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="150">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#153</styleUrl>
+            <Polygon id="149">
+                <outerBoundaryIs>
+                    <LinearRing id="151">
+                        <coordinates>-121.46099436596215,38.56554773999999,0.0 -121.46965462,38.56054774,0.0 -121.47831487403785,38.56554773999999,0.0 -121.47831487403785,38.57554774,0.0 -121.46965462,38.58054773999999,0.0 -121.46099436596215,38.57554774,0.0 -121.46099436596215,38.56554773999999,0.0 -121.46099436596215,38.56554773999999,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="157">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#160</styleUrl>
+            <Polygon id="156">
+                <outerBoundaryIs>
+                    <LinearRing id="158">
+                        <coordinates>-121.44653264596215,38.549844119999996,0.0 -121.4551929,38.54484412,0.0 -121.46385315403785,38.549844119999996,0.0 -121.46385315403785,38.55984412,0.0 -121.4551929,38.56484412,0.0 -121.44653264596215,38.55984412,0.0 -121.44653264596215,38.549844119999996,0.0 -121.44653264596215,38.549844119999996,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="164">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#167</styleUrl>
+            <Polygon id="163">
+                <outerBoundaryIs>
+                    <LinearRing id="165">
+                        <coordinates>-121.44676080596216,38.54988068,0.0 -121.45542106,38.544880680000006,0.0 -121.46408131403786,38.54988068,0.0 -121.46408131403786,38.559880680000006,0.0 -121.45542106,38.56488068,0.0 -121.44676080596216,38.559880680000006,0.0 -121.44676080596216,38.54988068,0.0 -121.44676080596216,38.54988068,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="171">
+            <name>NotFlyable.Airport</name>
+            <description>California Highway Patrol Headquarters Heliport</description>
+            <styleUrl>#174</styleUrl>
+            <Polygon id="170">
+                <outerBoundaryIs>
+                    <LinearRing id="172">
+                        <coordinates>-121.47961016596216,38.59309948,0.0 -121.48827042,38.588099480000004,0.0 -121.49693067403786,38.59309948,0.0 -121.49693067403786,38.603099480000004,0.0 -121.48827042,38.60809948,0.0 -121.47961016596216,38.603099480000004,0.0 -121.47961016596216,38.59309948,0.0 -121.47961016596216,38.59309948,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="178">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#181</styleUrl>
+            <Polygon id="177">
+                <outerBoundaryIs>
+                    <LinearRing id="179">
+                        <coordinates>-121.39388592596217,38.647562779999994,0.0 -121.40254618000002,38.64256278,0.0 -121.41120643403787,38.647562779999994,0.0 -121.41120643403787,38.65756278,0.0 -121.40254618000002,38.662562779999995,0.0 -121.39388592596217,38.65756278,0.0 -121.39388592596217,38.647562779999994,0.0 -121.39388592596217,38.647562779999994,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="185">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#188</styleUrl>
+            <Polygon id="184">
+                <outerBoundaryIs>
+                    <LinearRing id="186">
+                        <coordinates>-121.38851734596214,38.65804978,0.0 -121.39717759999999,38.65304978,0.0 -121.40583785403784,38.65804978,0.0 -121.40583785403784,38.668049780000004,0.0 -121.39717759999999,38.67304978,0.0 -121.38851734596214,38.668049780000004,0.0 -121.38851734596214,38.65804978,0.0 -121.38851734596214,38.65804978,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="192">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#195</styleUrl>
+            <Polygon id="191">
+                <outerBoundaryIs>
+                    <LinearRing id="193">
+                        <coordinates>-121.38790188096215,38.660947715,0.0 -121.396562135,38.655947715,0.0 -121.40522238903785,38.660947715,0.0 -121.40522238903785,38.670947715000004,0.0 -121.396562135,38.675947715,0.0 -121.38790188096215,38.670947715000004,0.0 -121.38790188096215,38.660947715,0.0 -121.38790188096215,38.660947715,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="199">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#202</styleUrl>
+            <Polygon id="198">
+                <outerBoundaryIs>
+                    <LinearRing id="200">
+                        <coordinates>-121.38753796096213,38.660945845,0.0 -121.39619821499998,38.655945845000005,0.0 -121.40485846903783,38.660945845,0.0 -121.40485846903783,38.670945845000006,0.0 -121.39619821499998,38.675945845,0.0 -121.38753796096213,38.670945845000006,0.0 -121.38753796096213,38.660945845,0.0 -121.38753796096213,38.660945845,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="206">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#209</styleUrl>
+            <Polygon id="205">
+                <outerBoundaryIs>
+                    <LinearRing id="207">
+                        <coordinates>-121.38680037929547,38.660951580952386,0.0 -121.39546063333331,38.65595158095239,0.0 -121.40412088737116,38.660951580952386,0.0 -121.40412088737116,38.67095158095239,0.0 -121.39546063333331,38.675951580952386,0.0 -121.38680037929547,38.67095158095239,0.0 -121.38680037929547,38.660951580952386,0.0 -121.38680037929547,38.660951580952386,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="213">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#216</styleUrl>
+            <Polygon id="212">
+                <outerBoundaryIs>
+                    <LinearRing id="214">
+                        <coordinates>-121.38716790310501,38.660950404761905,0.0 -121.39582815714286,38.65595040476191,0.0 -121.40448841118071,38.660950404761905,0.0 -121.40448841118071,38.67095040476191,0.0 -121.39582815714286,38.675950404761906,0.0 -121.38716790310501,38.67095040476191,0.0 -121.38716790310501,38.660950404761905,0.0 -121.38716790310501,38.660950404761905,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="220">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#223</styleUrl>
+            <Polygon id="219">
+                <outerBoundaryIs>
+                    <LinearRing id="221">
+                        <coordinates>-121.39571334596216,38.6578776,0.0 -121.40437360000001,38.652877600000004,0.0 -121.41303385403786,38.6578776,0.0 -121.41303385403786,38.667877600000004,0.0 -121.40437360000001,38.6728776,0.0 -121.39571334596216,38.667877600000004,0.0 -121.39571334596216,38.6578776,0.0 -121.39571334596216,38.6578776,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="227">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#230</styleUrl>
+            <Polygon id="226">
+                <outerBoundaryIs>
+                    <LinearRing id="228">
+                        <coordinates>-121.39076774596214,38.66419902,0.0 -121.39942799999999,38.65919902,0.0 -121.40808825403784,38.66419902,0.0 -121.40808825403784,38.67419902,0.0 -121.39942799999999,38.67919902,0.0 -121.39076774596214,38.67419902,0.0 -121.39076774596214,38.66419902,0.0 -121.39076774596214,38.66419902,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="234">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#237</styleUrl>
+            <Polygon id="233">
+                <outerBoundaryIs>
+                    <LinearRing id="235">
+                        <coordinates>-121.40150936096217,38.650061775,0.0 -121.41016961500002,38.645061775,0.0 -121.41882986903786,38.650061775,0.0 -121.41882986903786,38.660061775,0.0 -121.41016961500002,38.665061775,0.0 -121.40150936096217,38.660061775,0.0 -121.40150936096217,38.650061775,0.0 -121.40150936096217,38.650061775,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="241">
+            <name>NotFlyable.Airport</name>
+            <description>helipad</description>
+            <styleUrl>#244</styleUrl>
+            <Polygon id="240">
+                <outerBoundaryIs>
+                    <LinearRing id="242">
+                        <coordinates>-121.38643530596218,38.660945605,0.0 -121.39509556000003,38.65594560500001,0.0 -121.40375581403788,38.660945605,0.0 -121.40375581403788,38.67094560500001,0.0 -121.39509556000003,38.675945605,0.0 -121.38643530596218,38.67094560500001,0.0 -121.38643530596218,38.660945605,0.0 -121.38643530596218,38.660945605,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="248">
+            <name>Trajectory</name>
+            <styleUrl>#249</styleUrl>
+            <LineString id="247">
+                <coordinates>-121.608975,38.701132,0.0 -121.511129,38.677485,0.0 -121.456883,38.631536,0.0 -121.445421,38.583167,0.0 -121.437775,38.544729,0.0 -121.429879,38.509457,0.0 -121.420202,38.44465,0.0 -121.386325,38.419507,0.0 -121.372831,38.365802,0.0 -121.362892,38.334846,0.0</coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>

@@ -130,7 +130,7 @@ def geojsonToKML(overlay_file, route_file, kml_file):
     # Convert trajectory file
     with open(route_file) as f:
         data = json.load(f)
-        feature = data['features']
+        feature = data['features'][0]
         geom = feature['geometry']
         geom_type = geom['type']
         properties = feature['properties']
@@ -181,7 +181,10 @@ def select_all_tasks(policy_sender, db, trajectory_file):
         "properties": {
             "event": "Trajectory",
             "fclass": "Trajectory",
-            "avoid_class": "Trajectory"
+            "avoid_class": "Trajectory",
+            "request_id": [],
+            "request_label": [],
+            "reference_utc_time": ""
         }
     }
     pois = loads(dumps(db.arizona.find()))
@@ -276,7 +279,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
     with open(route_file, "w") as outfile:
         route_map = {
             "type": "FeatureCollection",
-            "features": route_map
+            "features": [route_map]
         }
         outfile.write(dumps(route_map, indent=4))
 

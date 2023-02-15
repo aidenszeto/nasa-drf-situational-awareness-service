@@ -18,13 +18,13 @@ from classes.classes import Water, School, Government, Hospital, Health, Retail,
 CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?retryWrites=true&w=majority"
 ANGLES = [2*math.pi / 3, math.pi, 4*math.pi / 3, 5*math.pi / 3, 0, math.pi / 3]
 RADIUS_INC = 0.01000000
-DATABASE = "california"
+DATABASE = "ca"
 
 
 def createConnection():
     client = pymongo.MongoClient(
         CONN_STR, tls=True, tlsAllowInvalidCertificates=True)
-    return client.notification
+    return client.nsdb
     
 
 def generateHexagon(lat, lon, radius):
@@ -57,16 +57,16 @@ def smallestCircumscribingHexagon(zone):
 
 def main(file, always_avoid, store_flyable):
     nsdb = createConnection()
-    if DATABASE == "arizona":
+    if DATABASE == "az":
         if store_flyable:
-            col = nsdb.arizona_static
+            col = nsdb.az_static
         else:
-            col = nsdb.arizona
-    elif DATABASE == "california":
+            col = nsdb.az
+    elif DATABASE == "ca":
         if store_flyable:
-            col = nsdb.california_static
+            col = nsdb.ca_static
         else:
-            col = nsdb.california
+            col = nsdb.ca
     else:
         print("ERROR: database collection not found")
         return

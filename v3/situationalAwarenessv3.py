@@ -39,7 +39,7 @@ CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?r
 OUT_FILE = "conflicts.geojson"
 MAP_FILE = "conflicts_map.geojson"
 KML_FILE = "output.kml"
-DATABASE = "california"
+DATABASE = "az"
 
 
 # Retrieve MongoDB database
@@ -188,10 +188,10 @@ def select_all_tasks(policy_sender, db, trajectory_file):
             "reference_utc_time": ""
         }
     }
-    if DATABASE == "arizona":
-        pois = loads(dumps(db.arizona.find()))
-    elif DATABASE == "california":
-        pois = loads(dumps(db.california.find()))
+    if DATABASE == "az":
+        pois = loads(dumps(db.az.find()))
+    elif DATABASE == "ca":
+        pois = loads(dumps(db.ca.find()))
     else:
         print("ERROR: database collection not found")
         return []
@@ -297,10 +297,10 @@ def select_all_tasks(policy_sender, db, trajectory_file):
 # Return dump of database
 def get_zones(db):
     with open(f"{DATABASE}_zones.json", "w") as outfile:
-        if DATABASE == "arizona":
-            outfile.write(dumps(list(db.arizona.find()), indent=4))
-        elif DATABASE == "california":
-            outfile.write(dumps(list(db.california.find()), indent=4))
+        if DATABASE == "az":
+            outfile.write(dumps(list(db.az.find()), indent=4))
+        elif DATABASE == "ca":
+            outfile.write(dumps(list(db.ca.find()), indent=4))
 
 
 # def trajectory_service(sender, row, time):

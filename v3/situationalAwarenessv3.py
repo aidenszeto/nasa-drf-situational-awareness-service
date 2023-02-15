@@ -46,7 +46,7 @@ DATABASE = "california"
 def getCollection():
     client = pymongo.MongoClient(
         CONN_STR, tls=True, tlsAllowInvalidCertificates=True)
-    return client.notification
+    return client.nsdb
 
 
 # Helper function for intersect
@@ -193,7 +193,7 @@ def select_all_tasks(policy_sender, db, trajectory_file):
     elif DATABASE == "california":
         pois = loads(dumps(db.california.find()))
     else:
-        print("ERROR: database not found")
+        print("ERROR: database collection not found")
         return []
     add_routes = True
     for row in pois:

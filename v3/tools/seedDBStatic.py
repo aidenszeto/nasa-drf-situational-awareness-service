@@ -18,13 +18,14 @@ from classes.classes import Water, School, Government, Hospital, Health, Retail,
 CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?retryWrites=true&w=majority"
 ANGLES = [2*math.pi / 3, math.pi, 4*math.pi / 3, 5*math.pi / 3, 0, math.pi / 3]
 RADIUS_INC = 0.01000000
+DATABASE = "california"
 
 
 def createConnection():
     client = pymongo.MongoClient(
         CONN_STR, tls=True, tlsAllowInvalidCertificates=True)
     return client.notification
-
+    
 
 def generateHexagon(lat, lon, radius):
     lat = float(lat)
@@ -54,9 +55,21 @@ def smallestCircumscribingHexagon(zone):
         radius += RADIUS_INC
 
 
-def main(file, always_avoid):
-    notification = createConnection()
-    arizona = notification.arizona
+def main(file, always_avoid, store_flyable):
+    nsdb = createConnection()
+    if DATABASE == "arizona":
+        if store_flyable:
+            col = nsdb.arizona_static
+        else:
+            col = nsdb.arizona
+    elif DATABASE == "california":
+        if store_flyable:
+            col = nsdb.california_static
+        else:
+            col = nsdb.california
+    else:
+        print("ERROR: database collection not found")
+        return
 
     f = open(file, "r")
     data = json.loads(f.read())
@@ -117,11 +130,18 @@ def main(file, always_avoid):
             "coordinates": [smallestCircumscribingHexagon(zones[i])]
         }
         if fclass[:3] == "Not":
-            arizona.insert_one({
+            col.insert_one({
                 "type": "Feature",
                 "geometry": geometry,
                 "properties": properties
             })
+        else:
+            if store_flyable:
+                col.insert_one({
+                    "type": "Feature",
+                    "geometry": geometry,
+                    "properties": properties
+                })
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
@@ -129,6 +149,7 @@ if __name__ == '__main__':
     )
     parser.add_argument("filename", nargs=1)
     parser.add_argument("-a", action="store_true")
+    parser.add_argument("-f", action="store_true")
     args = parser.parse_args()
 
-    main(args.filename[0], args.a)
+    main(args.filename[0], args.a, args.f)

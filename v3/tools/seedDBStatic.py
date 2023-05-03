@@ -18,7 +18,7 @@ from classes.classes import Water, School, Government, Hospital, Health, Retail,
 CONN_STR = "mongodb+srv://aiden:bE9wTAjULtcBFz58@cluster0.o222wih.mongodb.net/?retryWrites=true&w=majority"
 ANGLES = [2*math.pi / 3, math.pi, 4*math.pi / 3, 5*math.pi / 3, 0, math.pi / 3]
 RADIUS_INC = 0.01000000
-DATABASE = "ca"
+DATABASE = ""
 
 
 def createConnection():
@@ -67,6 +67,21 @@ def main(file, always_avoid, store_flyable):
             col = nsdb.ca_static
         else:
             col = nsdb.ca
+    elif DATABASE == "il":
+        if store_flyable:
+            col = nsdb.il_static
+        else:
+            col = nsdb.il
+    elif DATABASE == "tx":
+        if store_flyable:
+            col = nsdb.tx_static
+        else:
+            col = nsdb.tx
+    elif DATABASE == "ny":
+        if store_flyable:
+            col = nsdb.ny_static
+        else:
+            col = nsdb.ny
     else:
         print("ERROR: database collection not found")
         return

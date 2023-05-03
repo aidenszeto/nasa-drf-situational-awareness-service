@@ -7,6 +7,7 @@ import geopandas as gp
 import argparse
 
 def main(shp_dir, new_dir):
+    os.mkdir(new_dir)
     for filename in os.listdir(shp_dir):
         f = os.path.join(shp_dir, filename)
         if os.path.isfile(f) and f[len(f) - 4:] == ".shp":
@@ -23,5 +24,5 @@ if __name__ == '__main__':
     parser.add_argument("directory", nargs="*")
     args = parser.parse_args()
     shp_dir = args.directory[0]
-    new_dir = shp_dir[:shp_dir.index("-")] + "-geojson"
+    new_dir = shp_dir[:shp_dir.index("-latest")] + "-geojson"
     main(shp_dir, new_dir)

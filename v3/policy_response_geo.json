@@ -1,0 +1,92 @@
+{
+    "_id": {
+        "$oid": "63491476cf751ad7ed637ff1"
+    },
+    "type": "CPE_NOTIFICATION_RESP",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    {
+                        "$numberInt": "1"
+                    },
+                    {
+                        "$numberInt": "1"
+                    }
+                ],
+                [
+                    {
+                        "$numberInt": "3"
+                    },
+                    {
+                        "$numberInt": "3"
+                    }
+                ],
+                [
+                    {
+                        "$numberDouble": "-112.07487793157966"
+                    },
+                    {
+                        "$numberDouble": "33.35969573361516"
+                    }
+                ],
+                [
+                    {
+                        "$numberDouble": "-112.1154646018878"
+                    },
+                    {
+                        "$numberDouble": "33.37213303894667"
+                    }
+                ],
+                [
+                    {
+                        "$numberDouble": "-112.14910880414443"
+                    },
+                    {
+                        "$numberDouble": "33.34917391297312"
+                    }
+                ],
+                [
+                    {
+                        "$numberDouble": "-112.14216470823824"
+                    },
+                    {
+                        "$numberDouble": "33.31378483521286"
+                    }
+                ],
+                [
+                    {
+                        "$numberDouble": "-112.10159788091084"
+                    },
+                    {
+                        "$numberDouble": "33.30135043883555"
+                    }
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "ALT": {
+            "$numberInt": "0"
+        },
+        "EVENT": "EMSALERT",
+        "GUID": "GUID",
+        "RANGE": {
+            "$numberInt": "0"
+        },
+        "SEGMENT": "SEGMENT",
+        "TIME": "2022-08-30 16:05:32",
+        "TYPE": "GEO",
+        "VECTOR": {
+            "$numberInt": "0"
+        },
+        "active": {
+            "$numberInt": "1"
+        },
+        "class": "FLIGHTCOORIDOR",
+        "static": {
+            "$numberInt": "0"
+        }
+    }
+}
